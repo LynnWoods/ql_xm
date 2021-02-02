@@ -1,0 +1,285 @@
+{
+	"pages": [
+		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "麒麟礦業"
+			}
+		},
+		{
+			"path": "pages/pledge/index",
+			"style": {
+				"navigationBarTitleText": "质押产品"
+			}
+		},
+		{
+			"path": "pages/bazaar/index",
+			"style": {
+				"navigationBarTitleText": "算力"
+			}
+		},
+		{
+			"path": "pages/user/index",
+			"style": {
+				"navigationBarTitleText": "我的"
+			}
+		},
+		{
+			"path": "pages/login/forget",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/login/register",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/view/home/notice",
+			"style": {
+				"navigationBarTitleText": "公告",
+				"enablePullDownRefresh": false
+			}
+		},
+		{
+			"path": "pages/view/home/noticeDeta",
+			"style": {
+				"navigationBarTitleText": "公告",
+				"navigationBarBackgroundColor": "#fff"
+			}
+		},
+		{
+			"path": "pages/view/home/newMsg",
+			"style": {
+				"navigationBarTitleText": "新闻资讯"
+			}
+		},
+		{
+			"path": "pages/view/home/activity",
+			"style": {
+				"navigationBarTitleText": "活动列表"
+			}
+		},
+		{
+			"path": "pages/view/home/activityDeta",
+			"style": {
+				"navigationBarTitleText": "活动详情",
+				"navigationBarBackgroundColor": "#fff"
+			}
+		},
+		{
+			"path": "pages/view/pledge/pledge",
+			"style": {
+				"navigationBarTitleText": "FIL 质押挖矿",
+				"navigationBarBackgroundColor": "#547eff",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/view/pledge/affirm",
+			"style": {
+				"navigationBarTitleText": "确认质押"
+			}
+		},
+		{
+			"path": "pages/view/pledge/succeed",
+			"style": {
+				"navigationBarTitleText": "质押成功"
+			}
+		},
+		{
+			"path": "pages/view/user/topUp",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/view/user/topupDetail",
+			"style": {
+				"navigationBarTitleText": "明细",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/view/user/extract",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/view/user/extractDetail",
+			"style": {
+				"navigationBarTitleText": "明细",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/view/user/transfer",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/view/user/transferDetail",
+			"style": {
+				"navigationBarTitleText": "明细",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/view/user/asset",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/view/user/assetDetail",
+			"style": {
+				"navigationBarTitleText": "明细",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/view/user/myOrder",
+			"style": {
+				"navigationBarTitleText": "我的订单",
+				"enablePullDownRefresh": true
+			}
+		},
+		{
+			"path": "pages/view/user/orderDetail",
+			"style": {
+				"navigationBarTitleText": "Filecoin 质押",
+				"navigationBarBackgroundColor": "#547eff",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/view/user/hashrate",
+			"style": {
+				"navigationBarTitleText": "订单详情",
+				"navigationBarBackgroundColor": "#547eff",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/view/user/unlock",
+			"style": {
+				"navigationBarTitleText": "确认解锁"
+			}
+		},
+		{
+			"path": "pages/view/user/invite",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/view/user/card",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/view/user/setSafety",
+			"style": {
+				"navigationBarTitleText": "安全中心"
+			}
+		},
+		{
+			"path": "pages/view/user/setMobile",
+			"style": {
+				"navigationBarTitleText": "修改手机号码"
+			}
+		},
+		{
+			"path": "pages/view/user/setPass",
+			"style": {
+				"navigationBarTitleText": "修改登录密码"
+			}
+		},
+		{
+			"path": "pages/view/user/setDeal",
+			"style": {
+				"navigationBarTitleText": "修改交易密码"
+			}
+		},
+		{
+			"path": "pages/view/user/us",
+			"style": {
+				"navigationBarTitleText": "关于我们"
+			}
+		},{
+            "path" : "pages/view/home/msg_info",
+            "style" : {
+				"navigationBarTitleText": "新闻详情"
+			}
+        }
+        ,{
+            "path" : "pages/view/home/FIL_now/FIL_now",
+            "style" : {
+				"navigationBarTitleText": "Filecoin挖矿成本实时"
+			}
+        },
+		{
+			"path": "pages/view/bazaar/etpDetails",
+			"style": {
+				"navigationBarTitleText": "产品详情",
+				"navigationBarBackgroundColor": "#547eff",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path" : "pages/view/bazaar/payEtp",
+			"style" : {
+				"navigationBarTitleText": "产品详情"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarBackgroundColor": "#F3F3F3",
+		"backgroundColor": "#F3F3F3"
+	},
+	"tabBar": {
+		"color": "#a4acc2",
+		"selectedColor": "#3f61dd",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/icon_1.png",
+				"selectedIconPath": "static/icon_2.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/pledge/index",
+				"iconPath": "static/icon_3.png",
+				"selectedIconPath": "static/icon_4.png",
+				"text": "质押"
+			},
+			{
+				"pagePath": "pages/bazaar/index",
+				"iconPath": "static/icon_5.png",
+				"selectedIconPath": "static/icon_6.png",
+				"text": "算力"
+			},
+			{
+				"pagePath": "pages/user/index",
+				"iconPath": "static/icon_7.png",
+				"selectedIconPath": "static/icon_8.png",
+				"text": "我的"
+			}
+		]
+	}
+}
