@@ -18,8 +18,8 @@
                     <text class="blue" @click="open(3)">《用户服务协议》</text>
                     <text class="blue" @click="open(4)">《隐私条款》</text>
                 </view>
-                <button class="lg-btn" @click="login">登录</button>
-                <button class="re-btn" @click="register">注册</button>
+                <button class="lg-btn" @click="login">{{$t('login[0]')}}</button>
+                <button class="re-btn" @click="register">{{$t('login[1]')}}</button>
             </view>
         </view>
 		<uniPopup ref="popup" type="center">
@@ -71,6 +71,9 @@
             },
             login(){
                 let _this = this
+                this.$i18n.locale = 'zh_cn'
+                uni.setStorageSync('_lang', 'zh_cn')
+                return
                 if (!_this.formData.tel){
                     _this.$public.msg('手机号不能为空')
                     return false
