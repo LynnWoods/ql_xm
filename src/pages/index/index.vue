@@ -120,6 +120,12 @@
 			// 进入首页时执行长连接
 			this.set_socket()
 		},
+		onReady() {
+			uni.setNavigationBarTitle({
+				// title: this.$t('Project')
+				title: '麒麟礦業'
+			})
+		},
 		onHide(){
 			this.stompClient.disconnect();
 		},

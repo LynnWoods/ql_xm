@@ -50,14 +50,35 @@
 			// }
 			// #endif
 			//-------end
-		},
+            this.setTabBarText()
+        },
 		onShow: function() {
 			// console.log('App Show')
             this.$store.dispatch('getUserInfo',this.$ComTools.getUser())
 		},
 		onHide: function() {
 			// console.log('App Hide')
-		}
+		},
+        methods:{
+            setTabBarText() {
+                uni.setTabBarItem({
+                    index: 0,
+                    text: '首页'
+                })
+                uni.setTabBarItem({
+                    index: 1,
+                    text: '质押'
+                })
+                uni.setTabBarItem({
+                    index: 2,
+                    text: '算力'
+                })
+                uni.setTabBarItem({
+                    index: 3,
+                    text: '我的'
+                })
+            },
+        }
 	}
 </script>
 

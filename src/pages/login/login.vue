@@ -71,9 +71,9 @@
             },
             login(){
                 let _this = this
-                this.$i18n.locale = 'zh_cn'
-                uni.setStorageSync('_lang', 'zh_cn')
-                return
+                // this.$i18n.locale = 'zh_cn'
+                // uni.setStorageSync('_lang', 'zh_cn')
+                // return
                 if (!_this.formData.tel){
                     _this.$public.msg('手机号不能为空')
                     return false
