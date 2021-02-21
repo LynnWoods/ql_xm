@@ -1,15 +1,15 @@
 <template>
     <view class="setSafetyContent">
         <view class="userList">
-            <view class="cu-item" @click="routeSkip('setMobile')">我的帐号 <text>{{ $public.phoneEncryption(tel) }}</text></view>
-            <view class="cu-item" @click="routeSkip('setPass')">登录密码 <text>修改</text></view>
-            <view class="cu-item" @click="routeSkip('setDeal')">交易密码 
-			<text v-if="status">去修改</text>
-			<text v-else>去设置</text>
+            <view class="cu-item" @click="routeSkip('setMobile')">{{$t('content.set[0]')}} <text>{{ $public.phoneEncryption(tel) }}</text></view>
+            <view class="cu-item" @click="routeSkip('setPass')">{{$t('content.set[1]')}} <text>{{$t('content.set[2]')}}</text></view>
+            <view class="cu-item" @click="routeSkip('setDeal')">{{$t('content.set[3]')}}
+			<text v-if="status">{{$t('content.set[4]')}}</text>
+			<text v-else>{{$t('content.set[5]')}}</text>
 			</view>
         </view>
         <view class="btnBox">
-            <button class="cu-btn" @click="outLogin">退出登录</button>
+            <button class="cu-btn" @click="outLogin">{{$t('content.set[6]')}}</button>
         </view>
     </view>
 </template>
@@ -24,11 +24,16 @@
             }
         },
         onLoad(){
-			
+
 		},
 		onShow(){
 			this.status = uni.getStorageSync('user').jyPasswprd
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[20]')
+            })
+        },
         computed:{},
         methods:{
             routeSkip(url){

@@ -2,28 +2,28 @@
     <view class="succeedContent">
         <view class="succInfo" v-if="order_info_list">
             <view class="showInfo">
-                <text>质押份数</text>
-                <text>{{order_info_list.amount}} 份</text>
+                <text>{{$t('content.pledge[3]')}}</text>
+                <text>{{order_info_list.amount}} {{$t('content.pledge[4]')}}</text>
             </view>
             <view class="showInfo">
-                <text>单位产品质押</text>
+                <text>{{$t('content.pledge[5]')}}</text>
                 <text>{{succeed.unit}} FIL</text>
             </view>
             <view class="showInfo">
-                <text>质押数量合计</text>
+                <text>{{$t('content.pledge[6]')}}</text>
                 <text>{{succeed.unit*order_info_list.amount}} FIL</text>
             </view>
             <view class="showInfo">
-                <text>质押期限</text>
-                <text>{{succeed.day}} 天</text>
+                <text>{{$t('content.pledge[7]')}}</text>
+                <text>{{succeed.day}} {{$t('content.pledge[8]')}}</text>
             </view>
             <view class="showInfo">
-                <text>质押时间</text>
+                <text>{{$t('content.pledge[26]')}}</text>
                 <text>{{order_info_list.createTime}}</text>
             </view>
         </view>
         <view class="btnBox">
-            <button class="cu-btn" @click="jump_info">查看详情</button>
+            <button class="cu-btn" @click="jump_info">{{$t('content.pledge[27]')}}</button>
         </view>
     </view>
 </template>
@@ -50,6 +50,11 @@
 		onShow(){
 			this.get_order_info()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[10]')
+            })
+        },
         methods:{
 			get_order_info(){
 				order_info({id:this.id}).then(res=>{

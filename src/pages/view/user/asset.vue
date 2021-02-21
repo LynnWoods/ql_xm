@@ -3,13 +3,13 @@
         <uni-nav-bar background-color="#F3F3F3" shadow="false" fixed="true">
             <view class="navBar">
                 <image src="@/static/left.png" @click="returnIndex"></image>
-                <view class="tit">资产</view>
-                <view class="rightTit"@click="assetDetail">明细</view>
+                <view class="tit">{{$t('content.user[42]')}}</view>
+                <view class="rightTit"@click="assetDetail">{{$t('content.user[11]')}}</view>
             </view>
         </uni-nav-bar>
         <view class="assetContent">
             <view class="assetHead">
-                <view class="cny">估值 (CNY)</view>
+                <view class="cny">{{$t('content.user[43]')}} (CNY)</view>
                 <view class="price">￥ {{cny}}</view>
             </view>
             <view class="assetBody">
@@ -20,17 +20,17 @@
                     </view>
                     <view class="showInfo">
                         <view class="box">
-                            <view>可用余额</view>
+                            <view>{{$t('content.user[44]')}}</view>
                             <view>{{item.balance}}</view>
                         </view>
                         <text class="line"></text>
                         <view class="box">
-                            <view>待释放收益</view>
+                            <view>{{$t('content.user[45]')}}</view>
                             <view>{{item.releaseBalance}}</view>
                         </view>
                         <text class="line"></text>
                         <view class="box">
-                            <view>总余额</view>
+                            <view>{{$t('content.user[46]')}}</view>
                             <view>{{item.balance+item.releaseBalance+item.frozenBalance}}</view>
                         </view>
                     </view>

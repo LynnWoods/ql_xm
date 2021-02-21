@@ -14,7 +14,7 @@
                 </view>
             </view>
         </view>
-        
+
     </view>
 </template>
 
@@ -37,6 +37,11 @@
 		  }
 		  this.get_wallet_info();
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[14]')
+            })
+        },
 		onPullDownRefresh() {
 			this.page = 1
 		    this.get_wallet_info();

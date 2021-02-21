@@ -4,19 +4,19 @@
             <image src="@/static/left_1.png" class="inviteBack" @click="inviteBack"></image>
             <view class="inCode">
                 <view class="box">
-                    <text>我的邀请码</text>
+                    <text>{{$t('content.invite[0]')}}</text>
                     <view class="code">{{invitationCode}}</view>
-                    <view class="copy" @click="copy(invitationCode)">复制</view>
+                    <view class="copy" @click="copy(invitationCode)">{{$t('content.invite[1]')}}</view>
                 </view>
             </view>
         </view>
         <view>
-			<view class="inviteRecord">邀请记录</view>
-			<view class="inviteLabel">被邀请人注册后生效</view>
+			<view class="inviteRecord">{{$t('content.invite[2]')}}</view>
+			<view class="inviteLabel">{{$t('content.invite[3]')}}</view>
 			<view class="inviteList" v-if="invitation.length>0">
 			    <view class="title">
-			        <text>日期</text>
-			        <text>邀请人手机号</text>
+			        <text>{{$t('content.invite[4]')}}</text>
+			        <text>{{$t('content.invite[5]')}}</text>
 			    </view>
 			    <view class="contBody">
 			        <view class="line" v-for="(item,index) in invitation" :key="index">
@@ -27,7 +27,7 @@
 			</view>
 		</view>
         <view class="btnBox">
-            <button class="cu-btn" @click="card">生成邀请卡</button>
+            <button class="cu-btn" @click="card">{{$t('content.invite[6]')}}</button>
         </view>
     </view>
 </template>

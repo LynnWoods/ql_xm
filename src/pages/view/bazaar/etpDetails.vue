@@ -1,7 +1,7 @@
 <template>
     <view class="etpDetailsContent" v-if="product_data">
         <view class="headBox">
-            <view class="earnings">剩余算力</view>
+            <view class="earnings">{{$t('content.bazaar[3]')}}</view>
             <view class="percentum">{{product_data.remainderAmount}} T</view>
         </view>
         <view class="etpCon">
@@ -27,22 +27,22 @@
                     <text>{{product_data.lockDay}}天</text>
                 </view>
             </view>
-            <view class="details">详情介绍</view>
+            <view class="details">{{$t('content.bazaar[4]')}}</view>
             <view class="editCont"v-if="product_data.rule" v-html="product_data.rule"></view>
         </view>
 
         <view class="botmFixed">
             <view class="btnBox">
-                <button class="cu-btn"@click="pay(product_data.id)" v-if="product_data.downTime < 0">立即购买</button>
-				<button class="cu-btn color-btn" v-if="product_data.downTime > 0">距离开抢 {{$public.countDown(product_data.downTime)}}</button>
+                <button class="cu-btn"@click="pay(product_data.id)" v-if="product_data.downTime < 0">{{$t('content.bazaar[5]')}}</button>
+				<button class="cu-btn color-btn" v-if="product_data.downTime > 0">{{$t('content.bazaar[6]')}} {{$public.countDown(product_data.downTime)}}</button>
             </view>
         </view>
         <view class="showModal" v-if="isShowModal">
             <view class="modal">
-                <text class="content">您还未设置交易密码,请前往设置</text>
+                <text class="content">{{$t('content.bazaar[7]')}}</text>
                 <view class="btn">
-                    <view class="cancel"@click="isShowModal = false">取消</view>
-                    <view class="confirm" @click="set_password">立即前往</view>
+                    <view class="cancel"@click="isShowModal = false">{{$t('content.bazaar[8]')}}</view>
+                    <view class="confirm" @click="set_password">{{$t('content.bazaar[9]')}}</view>
                 </view>
             </view>
         </view>
@@ -67,6 +67,11 @@
         onLoad(option){
 			this.id = option.id
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[12]')
+            })
+        },
         methods:{
 			get_info(){
 				power_info({id:this.id}).then(res=>{

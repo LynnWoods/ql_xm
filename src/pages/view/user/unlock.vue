@@ -2,48 +2,48 @@
     <view class="unlockContent">
         <view class="numInfo" v-if="order_info_list">
             <view class="infoOrder">
-                <view>质押数量</view>
+                <view>{{$t('content.userList[8]')}}</view>
                 <view>
                     <text>{{order_info_list.money}} FIL</text>
                 </view>
             </view>
             <view class="infoOrder">
-                <view>解锁数量</view>
+                <view>{{$t('content.userList[28]')}}</view>
                 <view>
                     <text>{{order_info_list.money - unlock_info.money}} FIL</text>
                 </view>
             </view>
             <view class="infoOrder">
-                <view>违约手续费</view>
+                <view>{{$t('content.userList[29]')}}</view>
                 <view>
                     <text class="red">≈{{unlock_info.money}} FIL</text>
                 </view>
             </view>
             <view class="infoOrder">
-                <view>质押期限</view>
+                <view>{{$t('content.userList[34]')}}</view>
                 <view>
-                    <text>{{order_info_list.cycel}} 天</text>
+                    <text>{{order_info_list.cycel}} {{$t('content.userList[10]')}}</text>
                 </view>
             </view>
             <view class="infoOrder">
-                <view>已持有</view>
+                <view>{{$t('content.userList[35]')}}</view>
                 <view>
-                    <text>{{order_info_list.frofitPledge}} 天</text>
+                    <text>{{order_info_list.frofitPledge}} {{$t('content.userList[10]')}}</text>
                 </view>
             </view>
             <view class="infoOrder">
-                <view>到账时间</view>
+                <view>{{$t('content.userList[45]')}}</view>
                 <view>
                     <text>{{$public.timestampToTime1(unlock_info.time*1000)}}</text>
                 </view>
             </view>
         </view>
         <view class="ruleList">
-            <view class="rule">详细规则</view>
+            <view class="rule">{{$t('content.userList[46]')}}</view>
             <view class="listLine">{{product_rule}}</view>
         </view>
         <view class="btnBox">
-            <button class="cu-btn" @click="unclock">确认解锁</button>
+            <button class="cu-btn" @click="unclock">{{$t('content.userList[47]')}}</button>
         </view>
     </view>
 </template>
@@ -67,6 +67,11 @@
 		onShow(){
 			this.get_order_info()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[19]')
+            })
+        },
         methods:{
 			get_order_info(){
 				order_info({id:this.id}).then(res=>{

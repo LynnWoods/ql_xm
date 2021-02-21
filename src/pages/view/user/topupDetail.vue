@@ -4,7 +4,7 @@
             <image src="@/static/filecoin.png" class="topupImg"></image>
             <view class="message">
                 <view>
-                    <text class="text">已充币</text>
+                    <text class="text">{{$t('content.user[16]')}}</text>
                     <text class="priceNum">{{item.amount}}</text>
                 </view>
                 <view>
@@ -27,6 +27,11 @@
         		page:1,
         		pages:null
         	}
+        },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[14]')
+            })
         },
         onReachBottom() {
           this.page = this.page + 1;

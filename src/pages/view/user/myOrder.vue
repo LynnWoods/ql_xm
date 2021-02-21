@@ -1,37 +1,37 @@
 <template>
     <view class="myOrderContent">
         <view class="orderNav">
-            <view :class="isClass ? '':'active'"@click="orderNav('1')">算力</view>
-            <view :class="isClass ? 'active':''"@click="orderNav('2')">质押</view>
+            <view :class="isClass ? '':'active'"@click="orderNav('1')">{{$t('content.userList[0]')}}</view>
+            <view :class="isClass ? 'active':''"@click="orderNav('2')">{{$t('content.userList[1]')}}</view>
         </view>
         <view class="contOrder" v-if="isClass">
             <view class="listOrder" @click="orderDetail(item.id)" v-for="(item,index) in order_list" :key="index">
                 <view class="stateOrder">
                     <image src="@/static/filecoin.png"></image>
                     <view class="name">{{item.productName}}</view>
-					<view class="state yellow" v-if="item.status=='WAITINYG'">待收益</view>
-					<view class="state" v-if="item.status=='COMPLETE'">已完成</view>
-					<view class="state violet" v-if="item.status=='CANCELED'">已解锁</view>
-					<view class="state red" v-if="item.status=='CANCEL'">解锁中</view>
-                    <view class="state green" v-if="item.status=='HAVING'">收益中</view>
+					<view class="state yellow" v-if="item.status=='WAITINYG'">{{$t('content.userList[2]')}}</view>
+					<view class="state" v-if="item.status=='COMPLETE'">{{$t('content.userList[3]')}}</view>
+					<view class="state violet" v-if="item.status=='CANCELED'">{{$t('content.userList[4]')}}</view>
+					<view class="state red" v-if="item.status=='CANCEL'">{{$t('content.userList[5]')}}</view>
+                    <view class="state green" v-if="item.status=='HAVING'">{{$t('content.userList[6]')}}</view>
                 </view>
                 <view class="infoOrder">
-                    <view>质押时间</view>
+                    <view>{{$t('content.userList[7]')}}</view>
                     <view>
                         <text>{{item.createTime}}</text>
                     </view>
                 </view>
                 <view class="infoOrder">
-                    <view>质押数量</view>
+                    <view>{{$t('content.userList[8]')}}</view>
                     <view>
                         <text>{{item.money}} FIL</text>
                     </view>
                 </view>
                 <view class="infoOrder">
-                    <view>质押期限</view>
+                    <view>{{$t('content.userList[9]')}}</view>
                     <view>
-                        <text>{{item.frofitPledge}} 天 /</text>
-                        <text class="gray"> {{item.cycel}} 天</text>
+                        <text>{{item.frofitPledge}} {{$t('content.userList[10]')}} /</text>
+                        <text class="gray"> {{item.cycel}} {{$t('content.userList[10]')}}</text>
                     </view>
                 </view>
             </view>
@@ -145,27 +145,27 @@
                 <view class="stateOrder">
                     <image src="@/static/filecoin.png"></image>
                     <view class="name">{{item.powerName}}</view>
-                    <view class="state green" v-if="item.status == 'WAITINYG'">待分发</view>
-                    <view class="state yellow" v-if="item.status == 'HAVING'">分发中</view>
-                    <view class="state" v-if="item.status == 'COMPLETE'">已完成</view>
+                    <view class="state green" v-if="item.status == 'WAITINYG'">{{$t('content.userList[11]')}}</view>
+                    <view class="state yellow" v-if="item.status == 'HAVING'">{{$t('content.userList[12]')}}</view>
+                    <view class="state" v-if="item.status == 'COMPLETE'">{{$t('content.userList[13]')}}</view>
                 </view>
                 <view class="infoOrder">
-                    <view>时间</view>
+                    <view>{{$t('content.userList[16]')}}</view>
                     <view>
                         <text>{{item.createTime}}</text>
                     </view>
                 </view>
                 <view class="infoOrder">
-                    <view>数量</view>
+                    <view>{{$t('content.userList[14]')}}</view>
                     <view>
                         <text>{{item.amount}} T</text>
                     </view>
                 </view>
                 <view class="infoOrder">
-                    <view>开挖时间</view>
+                    <view>{{$t('content.userList[15]')}}</view>
                     <view>
-                        <text>{{item.lockTime}} 天 /</text>
-                        <text class="gray"> {{item.lockDay}} 天</text>
+                        <text>{{item.lockTime}} {{$t('content.userList[10]')}} /</text>
+                        <text class="gray"> {{item.lockDay}} {{$t('content.userList[10]')}}</text>
                     </view>
                 </view>
             </view>
@@ -192,6 +192,11 @@
                 this.getPorderList()
             }
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[15]')
+            })
+        },
         onReachBottom() {
             this.page = this.page + 1;
             if (this.page > this.pages) {

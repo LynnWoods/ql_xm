@@ -1,41 +1,41 @@
 <template>
     <view class="hashrateContent">
         <view class="headBox">
-            <view class="earnings">订单数量(T)</view>
+            <view class="earnings">{{$t('content.userList[37]')}}(T)</view>
             <view class="percentum">{{dataInfor.amount}}</view>
             <view class="hashTime">
                 <view class="info">
-                    <text>开挖时间</text>
-                    <text>{{dataInfor.lockTime}}天 / {{dataInfor.lockDay}}天</text>
+                    <text>{{$t('content.userList[15]')}}</text>
+                    <text>{{dataInfor.lockTime}}{{$t('content.userList[10]')}} / {{dataInfor.lockDay}}{{$t('content.userList[10]')}}</text>
                 </view>
                 <view class="info"style="text-align: left">
-                    <text>算力有效期</text>
-                    <text>{{dataInfor.profitTime}}天 / {{dataInfor.cycelDay}}天</text>
+                    <text>{{$t('content.userList[38]')}}</text>
+                    <text>{{dataInfor.profitTime}}{{$t('content.userList[10]')}} / {{dataInfor.cycelDay}}{{$t('content.userList[10]')}}</text>
                 </view>
             </view>
         </view>
         <view class="orderCon">
             <view class="numInfo">
                 <view class="stateOrder">
-                    <view class="name">算力状态</view>
-                    <view class="state green" v-if="dataInfor.status == 'WAITINYG'">待分发</view>
-                    <view class="state yellow" v-if="dataInfor.status == 'HAVING'">分发中</view>
-                    <view class="state" v-if="dataInfor.status == 'COMPLETE'">已完成</view>
+                    <view class="name">{{$t('content.userList[39]')}}</view>
+                    <view class="state green" v-if="dataInfor.status == 'WAITINYG'">{{$t('content.userList[40]')}}</view>
+                    <view class="state yellow" v-if="dataInfor.status == 'HAVING'">{{$t('content.userList[41]')}}</view>
+                    <view class="state" v-if="dataInfor.status == 'COMPLETE'">{{$t('content.userList[22]')}}</view>
                 </view>
                 <view class="infoOrder">
-                    <view>订单金额</view>
+                    <view>{{$t('content.userList[42]')}}</view>
                     <view>
                         <view>{{dataInfor.money}} USDT</view>
                     </view>
                 </view>
                 <view class="infoOrder">
-                    <view>订单编号</view>
+                    <view>{{$t('content.userList[43]')}}</view>
                     <view>
                         <view>{{dataInfor.orderNo}}</view>
                     </view>
                 </view>
                 <view class="infoOrder">
-                    <view>订单时间</view>
+                    <view>{{$t('content.userList[44]')}}</view>
                     <view>
                         <text>{{dataInfor.createTime}}</text>
                     </view>
@@ -55,6 +55,11 @@
         },
         onLoad(option){
             this.getInfor(option.id)
+        },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[18]')
+            })
         },
         methods:{
             getInfor(id){

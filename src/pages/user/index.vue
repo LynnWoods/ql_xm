@@ -13,7 +13,7 @@
             </view>
             <view class="assetPrice">
                 <view class="title">
-                    总资产折合(USDT)
+                    {{$t('content.user[0]')}}(USDT)
                     <image :src="imgShow"@click="isShowImg"></image>
                 </view>
                 <view class="price" v-if="isPrice">{{usdt}} <text>≈{{cny}} CNY</text></view>
@@ -29,11 +29,11 @@
             </block>
         </view>
         <view class="userList">
-            <view class="cu-item" @click="myOrder"><image src="@/static/list_1.png"></image> 我的订单</view>
-            <view class="cu-item" @click="invite"><image src="@/static/list_2.png"></image> 邀请好友</view>
-            <view class="cu-item" @click="setSafety"><image src="@/static/list_3.png"></image> 安全设置</view>
-            <view class="cu-item" @click="usSkip"><image src="@/static/list_4.png"></image> 关于我们</view>
-            <view class="cu-item" @click="versions"><image src="@/static/list_5.png"></image> 检查更新</view>
+            <view class="cu-item" @click="myOrder"><image src="@/static/list_1.png"></image> {{$t('content.user[5]')}}</view>
+            <view class="cu-item" @click="invite"><image src="@/static/list_2.png"></image> {{$t('content.user[6]')}}</view>
+            <view class="cu-item" @click="setSafety"><image src="@/static/list_3.png"></image> {{$t('content.user[7]')}}</view>
+            <view class="cu-item" @click="usSkip"><image src="@/static/list_4.png"></image> {{$t('content.user[8]')}}</view>
+            <view class="cu-item" @click="versions"><image src="@/static/list_5.png"></image> {{$t('content.user[9]')}}</view>
         </view>
     </scroll-view>
 </template>
@@ -56,22 +56,22 @@
                 imgShow:require('@/static/show.png'),
                 userNav:[
                     {
-                        text:'充币',
+                        text:this.$t('content.user[1]'),
                         imgUrl:require('@/static/user_1.png'),
                         url:'topUp',
                     },
                     {
-                        text:'提币',
+                        text:this.$t('content.user[2]'),
                         imgUrl:require('@/static/user_2.png'),
                         url:'extract',
                     },
                     {
-                        text:'转账',
+                        text:this.$t('content.user[3]'),
                         imgUrl:require('@/static/user_3.png'),
                         url:'transfer',
                     },
                     {
-                        text:'资产',
+                        text:this.$t('content.user[4]'),
                         imgUrl:require('@/static/user_4.png'),
                         url:'asset',
                     }
@@ -88,6 +88,11 @@
 		      uni.stopPullDownRefresh(); //停止下拉刷新动画
 		    }, 1000);
 		 },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[13]')
+            })
+        },
         watch:{
             'nameTel'(o,n){}
         },

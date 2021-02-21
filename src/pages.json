@@ -215,17 +215,15 @@
 			"style": {
 				"navigationBarTitleText": "关于我们"
 			}
-		},{
+		},
+		{
             "path" : "pages/view/home/msg_info",
             "style" : {
 				"navigationBarTitleText": "新闻详情"
 			}
-        }
-        ,{
-            "path" : "pages/view/home/FIL_now/FIL_now",
-            "style" : {
-				"navigationBarTitleText": "Filecoin挖矿成本实时"
-			}
+        },
+        {
+            "path" : "pages/view/home/FIL_now/FIL_now"
         },
 		{
 			"path": "pages/view/bazaar/etpDetails",

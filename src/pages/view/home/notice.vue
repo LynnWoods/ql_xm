@@ -4,14 +4,14 @@
 
             <view class="nullBox" v-show="!announcement_list">
                 <image src="@/static/null_1.png"></image>
-                <text>暂无数据哦～</text>
+                <text>{{$t('content.home[9]')}}</text>
             </view>
 
             <view class="noticeList" @click="noticeDeta(item.id)" v-for="(item,index) in announcement_list" :key="index">
                 <view class="title">{{item.title}}</view>
                 <view class="time">
                     <text>{{item.createTime}}</text>
-                    <text>了解详情 > </text>
+                    <text>{{$t('content.home[10]')}} > </text>
                 </view>
             </view>
         </view>
@@ -42,9 +42,9 @@
                     },
                     noMoreSize: 5,
                     empty: {
-                        tip: '暂无相关数据'
+                        tip: this.$t('content.home[11]')
                     },
-                    textNoMore: '没有更多数据了'
+                    textNoMore: this.$t('content.home[12]')
                 },
 				announcement_list:null
             }
@@ -52,6 +52,11 @@
         onShow() {
 			this.get_list()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[1]')
+            })
+        },
         methods:{
 			get_list(){
 				get_announcement({}).then(res=>{//获取公告

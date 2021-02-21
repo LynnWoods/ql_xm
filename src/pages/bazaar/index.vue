@@ -7,7 +7,7 @@
                 <view v-if="item.isSell=='ACTIVE'">
                     <view v-if="item.isHold" class="blast">
 						<image src="@/static/blast.png"></image>
-						爆款
+                        {{$t('content.bazaar[0]')}}
 					</view>
 					<view v-else></view>
                 </view>
@@ -17,28 +17,28 @@
             </view>
             <view class="body">
                 <view class="line">
-                    <text>金额</text>
+                    <text>{{$t('content.bazaar[24]')}}</text>
                     <text>{{item.price}} USDT</text>
                 </view>
                 <view class="line">
-                    <text>产品有效期</text>
-                    <text>{{item.cycelDay}} 天</text>
+                    <text>{{$t('content.bazaar[25]')}}</text>
+                    <text>{{item.cycelDay}} {{$t('content.bazaar[26]')}}</text>
                 </view>
                 <view class="line">
-                    <text>剩余算力</text>
+                    <text>{{$t('content.bazaar[27]')}}</text>
                     <text>{{item.remainderAmount}} T</text>
                 </view>
                 <view class="line">
-                    <text>开挖时间</text>
-                    <text>{{item.lockDay}} 天</text>
+                    <text>{{$t('content.bazaar[28]')}}</text>
+                    <text>{{item.lockDay}} {{$t('content.bazaar[26]')}}</text>
                 </view>
             </view>
             <view class="bottom" v-if="item.downTime > 0&&item.isSell=='ACTIVE'">
-                <text>开始预售倒计时</text>
+                <text>{{$t('content.bazaar[1]')}}</text>
                 <text>{{$public.countDown(item.downTime)}}</text>
             </view>
 			<view class="bottom" v-if="item.downTime < 0&&item.isSell=='ACTIVE'">
-			    <text class="gray">正在销售中</text>
+			    <text class="gray">{{$t('content.bazaar[2]')}}</text>
 			</view>
 			<view class="bottom" v-if="item.isSell!='ACTIVE'"></view>
         </view>
@@ -58,6 +58,11 @@
 		onShow(){
 			this.get_data()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[11]')
+            })
+        },
         methods:{
 			get_data(){
 				power_page_list({pageNo:this.page,pageSize:1000}).then(res=>{

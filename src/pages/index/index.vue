@@ -20,7 +20,7 @@
 				<text></text>
 			</view>
 		</view>
-		<view class="headTitle">活动中心</view>
+		<view class="headTitle">{{$t('content.home[0]')}}</view>
 		<view class="showImg" @click="activity" v-if="activity_list.length!=0">
 			<image :src="baseUrl+activity_list[0].url"></image>
 		</view>
@@ -58,8 +58,8 @@
 <!--		</view>-->
 		<view class="newMsg">
 			<view class="infoTit">
-				<text>新闻资讯</text>
-				<text @click="newMore">更多  〉</text>
+				<text>{{$t('content.home[1]')}}</text>
+				<text @click="newMore">{{$t('content.home[2]')}}  〉</text>
 			</view>
 			<view class="listCon" v-for="(item,index) in advisory_list" @click="msg_info(item.id)" :key="index">
 				<image class="iconImg" :src="baseUrl+item.imgUrl"></image>
@@ -70,15 +70,15 @@
 			</view>
 		</view>
 		<view class="notice">
-			<view class="query" @click="bannerLink('/pages/view/home/FIL_now/FIL_now')">Filecoin挖矿成本实时查询</view>
+			<view class="query" @click="bannerLink('/pages/view/home/FIL_now/FIL_now')">{{$t('content.home[3]')}}</view>
 			<view class="rightBtn"></view>
 		</view>
 		<view class="coinMarket">
-			<view class="coinTit">币种行情</view>
+			<view class="coinTit">{{$t('content.home[4]')}}</view>
 			<view class="navCoin">
-				<text>币种/市值(￥)</text>
-				<text>最新价</text>
-				<text>24H涨跌幅</text>
+				<text>{{$t('content.home[5]')}}(￥)</text>
+				<text>{{$t('content.home[6]')}}</text>
+				<text>{{$t('content.home[7]')}}</text>
 			</view>
 			<view class="marketList" v-for="(item,index) in coin_list" :key="index">
 				<view class="coin">
@@ -122,8 +122,7 @@
 		},
 		onReady() {
 			uni.setNavigationBarTitle({
-				// title: this.$t('Project')
-				title: '麒麟礦業'
+				title: this.$t('header[0]')
 			})
 		},
 		onHide(){

@@ -63,19 +63,19 @@
             setTabBarText() {
                 uni.setTabBarItem({
                     index: 0,
-                    text: '首页'
+                    text: this.$t('footer[0]')
                 })
                 uni.setTabBarItem({
                     index: 1,
-                    text: '质押'
+                    text: this.$t('footer[1]')
                 })
                 uni.setTabBarItem({
                     index: 2,
-                    text: '算力'
+                    text: this.$t('footer[2]')
                 })
                 uni.setTabBarItem({
                     index: 3,
-                    text: '我的'
+                    text: this.$t('footer[3]')
                 })
             },
         }

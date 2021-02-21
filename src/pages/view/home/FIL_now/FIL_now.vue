@@ -8,9 +8,14 @@
 	export default {
 		data() {
 			return {
-				
+
 			};
-		}
+		},
+		onReady() {
+			uni.setNavigationBarTitle({
+				title: this.$t('header[5]')
+			})
+		},
 	}
 </script>
 

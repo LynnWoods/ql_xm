@@ -4,9 +4,9 @@
             <image src="@/static/filecoin.png" class="extractImg"></image>
             <view class="message">
                 <view>
-                    <text class="text" v-if="item.status==3">已提币</text>
-					<text class="text" v-if="item.status==0">提币中</text>
-					<text class="text" v-if="item.status==2">提币拒绝</text>
+                    <text class="text" v-if="item.status==3">{{$t('content.user[32]')}}</text>
+					<text class="text" v-if="item.status==0">{{$t('content.user[33]')}}</text>
+					<text class="text" v-if="item.status==2">{{$t('content.user[34]')}}</text>
                     <text class="priceNum black" v-if="item.status==3">{{'-'+item.arrivedAmount}}</text>
 					<text class="priceNum green" v-if="item.status==0">{{'-'+item.arrivedAmount}}</text>
 					<text class="priceNum black" v-if="item.status==2">{{'+'+item.arrivedAmount}}</text>
@@ -17,7 +17,7 @@
                 </view>
             </view>
         </view>
-		
+
     </view>
 </template>
 
@@ -51,6 +51,11 @@
         onShow(){
 			this.get_wallet_info()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[14]')
+            })
+        },
         methods:{
 			get_wallet_info(){
 				withdraw_detail({pageNo:this.page,pageSize:15}).then(res=>{

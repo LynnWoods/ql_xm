@@ -1,14 +1,14 @@
 <template>
     <view class="setMobile">
         <view class="setIpt">
-            <input type="text"v-model="formData.tel" placeholder="请输入新手机号"placeholder-style="color: #c4c4c4">
+            <input type="text"v-model="formData.tel" :placeholder="$t('content.set[7]')"placeholder-style="color: #c4c4c4">
         </view>
         <view class="setIpt">
-            <input type="text"v-model="formData.code" placeholder="请输入验证码"placeholder-style="color: #c4c4c4">
-            <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : '获取验证码'}}</text>
+            <input type="text"v-model="formData.code" :placeholder="$t('content.set[8]')"placeholder-style="color: #c4c4c4">
+            <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : $t('content.set[9]')}}</text>
         </view>
         <view class="btnBox">
-            <button class="cu-btn" @click="setNewTel">确定</button>
+            <button class="cu-btn" @click="setNewTel">{{$t('content.set[10]')}}</button>
         </view>
     </view>
 </template>
@@ -44,11 +44,16 @@
                 },1000)
             }
         },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[21]')
+            })
+        },
         methods:{
             getAuthCodeBefore(){
                 let _this = this;
                 if (!_this.formData.tel){
-                    _this.$public.msg('手机号不能为空')
+                    _this.$public.msg(_this.$t('content.set[15]'))
                     return false
                 }
                 if (!_this.sendCodeFlag){

@@ -18,6 +18,11 @@
 		onShow(){
 			this.get_data()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[7]')
+            })
+        },
         methods:{
 			get_data(){
 				get_advisory_info({id:this.id}).then(res=>{
@@ -32,6 +37,6 @@
 <style lang="scss" scoped>
     page{background-color: #fff}
     .actiDetaContent{
-		
+
 	}
 </style>

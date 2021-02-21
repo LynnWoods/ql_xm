@@ -2,24 +2,24 @@
     <view class="forgetContent">
         <view class="return">
             <image src="@/static/back_code.png" @click="returnLogin"></image>
-            <text>找回密码</text>
+            <text>{{$t('forget[0]')}}</text>
         </view>
         <view class="loginBox">
             <view class="loginIpt">
-                <input type="text" v-model="formData.tel" placeholder="请输入手机号"placeholder-style="color: #a9adbe">
+                <input type="text" v-model="formData.tel" :placeholder="$t('forget[1]')"placeholder-style="color: #a9adbe">
             </view>
             <view class="loginIpt">
-                <input type="text" v-model="formData.code" placeholder="请输入验证码"placeholder-style="color: #a9adbe">
-                <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : '验证码'}}</text>
+                <input type="text" v-model="formData.code" :placeholder="$t('forget[2]')"placeholder-style="color: #a9adbe">
+                <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : $t('forget[3]')}}</text>
             </view>
             <view class="loginIpt">
-                <input type="password" v-model="formData.password" placeholder="请输入新密码"placeholder-style="color: #a9adbe">
+                <input type="password" v-model="formData.password" :placeholder="$t('forget[4]')"placeholder-style="color: #a9adbe">
             </view>
             <view class="loginIpt">
-                <input type="password" v-model="formData.towPass" placeholder="请再次确认新密码"placeholder-style="color: #a9adbe">
+                <input type="password" v-model="formData.towPass" :placeholder="$t('forget[5]')"placeholder-style="color: #a9adbe">
             </view>
             <view class="btnFun">
-                <button class="lg-btn" @click="resetPass">重置密码</button>
+                <button class="lg-btn" @click="resetPass">{{$t('forget[6]')}}</button>
             </view>
         </view>
     </view>
@@ -68,7 +68,7 @@
             getAuthCodeBefore(){
                 let _this = this;
                 if (!_this.formData.tel){
-                    _this.$public.msg('请输入手机号')
+                    _this.$public.msg(_this.$t('forget[1]'))
                     return false
                 }
                 if (!_this.sendCodeFlag){
@@ -86,19 +86,19 @@
             resetPass(){
                 let _this = this;
                 if (!_this.formData.tel){
-                    _this.$public.msg('手机号不能为空')
+                    _this.$public.msg(_this.$t('forget[7]'))
                     return false
                 }
                 if (!_this.formData.code){
-                    _this.$public.msg('验证码不能为空')
+                    _this.$public.msg(_this.$t('forget[8]'))
                     return false
                 }
                 if (!_this.formData.password){
-                    _this.$public.msg('密码不能为空')
+                    _this.$public.msg(_this.$t('forget[9]'))
                     return false
                 }
                 if (_this.formData.password !== _this.formData.towPass){
-                    _this.$public.msg('两次密码输入不一致')
+                    _this.$public.msg(_this.$t('forget[10]'))
                     return false
                 }
                 let _data = {

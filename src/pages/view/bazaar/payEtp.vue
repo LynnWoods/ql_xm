@@ -2,52 +2,52 @@
     <view class="payEtpContent">
         <view class="etpInfo">
             <view class="line">
-                <text>算力名称</text>
+                <text>{{$t('content.bazaar[10]')}}</text>
                 <text>{{powerData.name}}</text>
             </view>
             <view class="line">
-                <text>单价</text>
+                <text>{{$t('content.bazaar[11]')}}</text>
                 <text>{{powerData.price}} USDT/T</text>
             </view>
             <view class="line">
-                <text>购买产品数量</text>
+                <text>{{$t('content.bazaar[12]')}}</text>
                 <view>
                     <sunui-stepper :label='1' :max="9999999" :val="1" :min="1" @change="stepper2"></sunui-stepper>
                 </view>
             </view>
             <view class="line">
-                <text>产品总额</text>
+                <text>{{$t('content.bazaar[13]')}}</text>
                 <text>{{num}} USDT</text>
             </view>
         </view>
         <view class="botmFixed">
             <view class="agreeEtp">
                 <view class="state" :class="isClause ? 'active' : ''" @click="isClause = !isClause"></view>
-                <text>我已阅读</text>
-                <text class="blue" @click="open">《算力购买协议》</text>
+                <text>{{$t('content.bazaar[14]')}}</text>
+                <text class="blue" @click="open">{{$t('content.bazaar[15]')}}</text>
             </view>
             <view class="btnBox">
                 <view class="price">
-                    <text>总计金额：</text>
+                    <text>{{$t('content.bazaar[16]')}}：</text>
                     <text>{{num}}USDT</text>
                 </view>
-                <view class="payBtn":class="isClause ? 'payBtn1' : ''" @click="pay">立即支付</view>
+                <view class="payBtn":class="isClause ? 'payBtn1' : ''" @click="pay">{{$t('content.bazaar[17]')}}</view>
             </view>
         </view>
         <uni-popup ref="popup" type="bottom">
             <view class="titModal">
-                <text>交易密码</text>
+                <text>{{$t('content.bazaar[18]')}}</text>
                 <image src="@/static/cha.png" class="delete"@click="deles"></image>
             </view>
             <view class="payPrice">{{num}}USDT</view>
-            <input class="uni-input payIpt"v-model="jyPasw"type="password" focus placeholder="请输入交易密码" placeholder-style="color: #c4c4c4"/>
-            <view class="payButton"@click="confirmPay">确定</view>
+            <input class="uni-input payIpt"v-model="jyPasw"type="password" focus :placeholder="$t('content.bazaar[19]')" placeholder-style="color: #c4c4c4"/>
+            <view class="payButton"@click="confirmPay">{{$t('content.bazaar[20]')}}</view>
         </uni-popup>
         <uni-popup ref="popups" type="center":maskClick="false" radius="32">
             <view class="successBox">
                 <image src="@/static/chenggong.png" class="sucImg"></image>
-                <view class="sucInfo">购买成功,请到我的订单查看</view>
-                <view class="sucBtn"@click="returnDeles">返回</view>
+                <view class="sucInfo">{{$t('content.bazaar[21]')}}</view>
+                <view class="sucBtn"@click="returnDeles">{{$t('content.bazaar[22]')}}</view>
             </view>
         </uni-popup>
         <uni-popup ref="popup1" type="center">
@@ -82,6 +82,11 @@
                 return this.powerData.price * this.valNum
             }
         },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[12]')
+            })
+        },
         methods:{
             stepper2(e){
                 this.valNum = e.val
@@ -98,7 +103,7 @@
                 if (_this.isClause){
                     _this.$refs.popup.open()
                 }else {
-                    _this.$public.msg('请认真阅读购买协议！')
+                    _this.$public.msg(_this.$t('content.bazaar[23]'))
                 }
             },
             deles(){

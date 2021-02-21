@@ -6,7 +6,7 @@
 
 <script>
 	import {get_announcement_info} from '@/api/api.js'
-    export default { 
+    export default {
         data(){
             return{
 				id:'',
@@ -15,11 +15,16 @@
         },
         onLoad(option){
 			this.id = option.id
-			
+
         },
 		onShow(){
 			this.get_data()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[1]')
+            })
+        },
         methods:{
 			get_data(){
 				get_announcement_info({id:this.id}).then(res=>{

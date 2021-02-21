@@ -4,8 +4,8 @@
             <image src="@/static/filecoin.png" class="transferImg"></image>
             <view class="message">
                 <view>
-                    <text class="text" v-if="item.status=='ACTIVE'">已转账</text>
-            		<text class="text" v-else>转账失败</text>
+                    <text class="text" v-if="item.status=='ACTIVE'">{{$t('content.user[40]')}}</text>
+            		<text class="text" v-else>{{$t('content.user[41]')}}</text>
                     <text class="priceNum black" v-if="item.status=='ACTIVE'">{{'-'+item.amount}}</text>
             		<text class="priceNum" v-else>{{'+'+item.amount}}</text>
                 </view>
@@ -29,6 +29,11 @@
 				page:1,
 				pages:null
 			}
+        },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[14]')
+            })
         },
 		onReachBottom() {
 		  this.page = this.page + 1;

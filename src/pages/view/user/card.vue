@@ -2,7 +2,7 @@
     <view class="cardContent">
         <image src="@/static/left_1.png" class="cardBack"@click="cardBack"></image>
         <r-canvas ref="rCanvas"></r-canvas>
-        <view class="save"@click="save">长按保存图片</view>
+        <view class="save"@click="save">{{$t('content.invite[7]')}}</view>
     </view>
 </template>
 

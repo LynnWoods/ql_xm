@@ -17,15 +17,15 @@
                 </view>
                 <view class="right">
                     <view :class="item.isSell=='ACTIVE'?'':'finish'">{{item.yearProfit}}%</view>
-                    <text :class="item.isSell=='ACTIVE'?'':'fontText'">年化收益率</text>
+                    <text :class="item.isSell=='ACTIVE'?'':'fontText'">{{$t('content.pledge[0]')}}</text>
                 </view>
             </view>
             <view class="botm"v-if="item.downTime > 0">
-                <text>开始销售倒计时</text>
+                <text>{{$t('content.pledge[1]')}}</text>
                 <text>{{$public.countDown(item.downTime)}}</text>
             </view>
 			<view class="botm" v-if="item.isSell!='ACTIVE'">
-			    <text>活动已结束</text>
+			    <text>{{$t('content.pledge[2]')}}</text>
 			</view>
         </view>
     </view>
@@ -44,6 +44,11 @@
 			}
         },
         onLoad(){},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[6]')
+            })
+        },
 		onShow(){
 			this.get_product()
 		},

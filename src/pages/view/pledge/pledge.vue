@@ -1,7 +1,7 @@
 <template>
     <view class="pledgeContent" v-if="pledge_data">
         <view class="headBox">
-            <view class="earnings">预计年化收益率</view>
+            <view class="earnings">{{$t('content.pledge[10]')}}</view>
             <view class="percentum">{{pledge_data.yearProfit}}%</view>
         </view>
 		<uniPopup ref="popup" type="center">
@@ -9,33 +9,33 @@
 		</uniPopup>
         <view class="productCon">
             <view class="numInfo">
-                <view class="title">购买质押产品</view>
+                <view class="title">{{$t('content.pledge[11]')}}</view>
                 <view class="iptBox">
 					<input type="number" v-model="number" :placeholder="numbers"placeholder-style="color: #a9adbe">
-					<text class="part">份</text>
-					<text class="small_font">(最小份数为{{pledge_data.minAmount}})</text>
+					<text class="part">{{$t('content.pledge[4]')}}</text>
+					<text class="small_font">({{$t('content.pledge[12]')}}{{pledge_data.minAmount}})</text>
 				</view>
-                <view class="usable">可用 {{balance}} fil <text @click="all(balance)">全部</text></view>
+                <view class="usable">{{$t('content.pledge[13]')}} {{balance}} fil <text @click="all(balance)">{{$t('content.pledge[14]')}}</text></view>
                 <view class="balance">
-                    <view class="num">剩余份数 {{pledge_data.remainderAmount}} 份</view>
+                    <view class="num">{{$t('content.pledge[15]')}} {{pledge_data.remainderAmount}} {{$t('content.pledge[4]')}}</view>
                 </view>
             </view>
             <view class="navInfo">
                 <view class="navli">
-                    <text>质押期限</text>
-                    <text>{{pledge_data.cycel}} 天</text>
+                    <text>{{$t('content.pledge[7]')}}</text>
+                    <text>{{pledge_data.cycel}} {{$t('content.pledge[8]')}}</text>
                 </view>
                 <view class="navli">
-                    <text>单位产品质押</text>
+                    <text>{{$t('content.pledge[5]')}}</text>
                     <text>{{pledge_data.unit}} FIL</text>
                 </view>
                 <view class="navli">
-                    <text>剩余数量</text>
+                    <text>{{$t('content.pledge[16]')}}</text>
                     <text>{{pledge_data.remainderAmount*pledge_data.unit}} FIL</text>
                 </view>
             </view>
             <view class="ruleList">
-                <view class="rule">详细规则</view>
+                <view class="rule">{{$t('content.pledge[17]')}}</view>
                 <view class="listLine">{{pledge_data.rule}}</view>
             </view>
         </view>
@@ -47,10 +47,10 @@
                         </mrpzx-checker-item>
                     </mrpzx-checker-box>
                 </view>
-                <view class="protText">我已阅读 <text @click="open">《质押协议》</text></view>
+                <view class="protText">{{$t('content.pledge[18]')}} <text @click="open">{{$t('content.pledge[19]')}}</text></view>
             </view>
             <view class="btnBox">
-                <button class="cu-btn" @click="affirmSkip">质押</button>
+                <button class="cu-btn" @click="affirmSkip">{{$t('content.pledge[20]')}}</button>
             </view>
         </view>
     </view>
@@ -83,6 +83,11 @@
 		onShow(){
 			this.get_data()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[8]')
+            })
+        },
         computed: {},
         methods:{
 			get_data(){
@@ -108,22 +113,22 @@
             },
             affirmSkip(){
 				if(!this.isCheck){
-					this.$public.msg('请阅读并同意《质押协议》')
+					this.$public.msg(this.$t('content.pledge[21]'))
 					return false
 				}
 				if(this.number.toString().indexOf('.')!=-1){
 					this.number = this.pledge_data.minAmount
-					this.$public.msg('购买质押产品不能为小数')
+					this.$public.msg(this.$t('content.pledge[22]'))
 					return false
 				}
 				if(this.number<=0){
-					this.$public.msg('请输入要购买质押产品的份数')
+					this.$public.msg(this.$t('content.pledge[23]'))
 					return false
 				}else if(this.number<this.pledge_data.minAmount){
-					this.$public.msg('您要购买质押产品的份数最小为'+this.pledge_data.minAmount)
+					this.$public.msg(this.$t('content.pledge[24]')+this.pledge_data.minAmount)
 					return false
 				}else if(this.number>this.pledge_data.remainderAmount){
-					this.$public.msg('您要购买质押产品的最多份数为'+this.pledge_data.remainderAmount)
+					this.$public.msg(this.$t('content.pledge[25]')+this.pledge_data.remainderAmount)
 					return false
 				}
 				uni.navigateTo({

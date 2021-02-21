@@ -3,24 +3,24 @@
         <uni-nav-bar background-color="#F3F3F3" shadow="false" fixed="true">
             <view class="navBar">
                 <image src="@/static/left.png" @click="returnIndex"></image>
-                <view class="tit">转账</view>
-                <view class="rightTit"@click="transferDetail">明细</view>
+                <view class="tit">{{$t('content.user[35]')}}</view>
+                <view class="rightTit"@click="transferDetail">{{$t('content.user[11]')}}</view>
             </view>
         </uni-nav-bar>
         <view class="transferContent">
             <view class="chainName">
                 <view class="iptNum">
                     <view class="suffix">
-                        <text>对方账户</text>
+                        <text>{{$t('content.user[36]')}}</text>
                     </view>
-                    <input type="text" v-model="transfer.address" placeholder="请输入对方帐号,仅限APP内转" style="padding: 0 15rpx;text-align: right">
+                    <input type="text" v-model="transfer.address" :placeholder="$t('content.user[37]')" style="padding: 0 15rpx;text-align: right">
                     <image src="@/static/scan.png"></image>
                 </view>
             </view>
             <view class="dropdownItem">
                 <view class="dropdownSelected" @click="changePopup">
                     <view class="iptCode">
-                        <text>币种</text>
+                        <text>{{$t('content.user[12]')}}</text>
                         <view>{{vlaTxt}}  <image src="@/static/more.png"></image></view>
                     </view>
                 </view>
@@ -32,19 +32,19 @@
             <view class="chainName">
                 <view class="iptNum">
                     <view class="suffix">
-                        <text>转账金额</text>
+                        <text>{{$t('content.user[38]')}}</text>
                     </view>
                     <input type="number" v-model="number" value="" placeholder="" style="padding-left: 15rpx">
                     <view class="suffix">
                         <text>{{vlaTxt}}</text>
                         <text class="long"></text>
-                        <text @click="all">全部</text>
+                        <text @click="all">{{$t('content.user[20]')}}</text>
                     </view>
                 </view>
             </view>
-            <view class="usableNum">可用 {{banlance+vlaTxt}}</view>
+            <view class="usableNum">{{$t('content.user[23]')}} {{banlance+vlaTxt}}</view>
             <view class="chainName">
-                <view class="name">手续费</view>
+                <view class="name">{{$t('content.user[24]')}}</view>
                 <view class="iptNum">
                     <input type="text" :value="transfer.fee" disabled>
                     <view class="suffix">
@@ -55,20 +55,20 @@
             <view class="chainName">
                 <view class="iptNum">
                     <view class="suffix">
-                        <text>交易密码</text>
+                        <text>{{$t('content.user[25]')}}</text>
                     </view>
-                    <input type="password" v-model="jyPassword" value="" style="text-align: right" placeholder="请输入交易密码">
+                    <input type="password" v-model="jyPassword" value="" style="text-align: right" :placeholder="$t('content.user[26]')">
                 </view>
             </view>
             <view class="showClass" v-if="showList" @click="closePopup"></view>
         </view>
         <view class="botmFixed">
             <view class="accountNum">
-                <text>预计到账数量</text>
+                <text>{{$t('content.user[30]')}}</text>
                 <text>{{transfer.totalAmount}} {{transfer.totalAmount?vlaTxt:''}}</text>
             </view>
             <view class="btnBox">
-                <button class="cu-btn" @click="submit_btn">确认转账</button>
+                <button class="cu-btn" @click="submit_btn">{{$t('content.user[39]')}}</button>
             </view>
         </view>
     </view>

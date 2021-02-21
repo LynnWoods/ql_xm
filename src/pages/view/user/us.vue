@@ -16,6 +16,11 @@
         onShow() {
 			this.get_data()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[24]')
+            })
+        },
         methods:{
 			get_data(){
 				cms_type({type:1}).then(res=>{

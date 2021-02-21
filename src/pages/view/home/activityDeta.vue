@@ -18,6 +18,11 @@
 		onShow(){
 			this.get_data()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[4]')
+            })
+        },
         methods:{
 			get_data(){
 				banner_info({id:this.id}).then(res=>{

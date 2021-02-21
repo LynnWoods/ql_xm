@@ -3,30 +3,30 @@
         <image src="@/static/logo.png" class="logo"></image>
         <view class="registerBox">
             <view class="loginIpt">
-                <input type="text" v-model="formData.tel" placeholder="请输入手机号"placeholder-style="color: #a9adbe">
+                <input type="text" v-model="formData.tel" :placeholder="$t('login[3]')"placeholder-style="color: #a9adbe">
             </view>
             <view class="loginIpt">
-                <input type="password" v-if="iptType == 'password'" v-model="formData.password" placeholder="请输入密码"placeholder-style="color: #a9adbe">
-                <input type="text" v-else v-model="formData.password" placeholder="请输入密码"placeholder-style="color: #a9adbe">
+                <input type="password" v-if="iptType == 'password'" v-model="formData.password" :placeholder="$t('login[4]')"placeholder-style="color: #a9adbe">
+                <input type="text" v-else v-model="formData.password" :placeholder="$t('login[4]')"placeholder-style="color: #a9adbe">
                 <image :src="passShow" @click="showPass"></image>
             </view>
             <view class="loginIpt">
-                <input type="text" v-model="formData.code" placeholder="请输入验证码"placeholder-style="color: #a9adbe">
-                <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : '验证码'}}</text>
+                <input type="text" v-model="formData.code" :placeholder="$t('forget[2]')"placeholder-style="color: #a9adbe">
+                <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : $t('forget[3]')}}</text>
             </view>
             <view class="inviteCode">
-                <text>邀请码(必填)</text>
+                <text>{{$t('register[0]')}}</text>
                 <input type="text"v-model="formData.invitation">
             </view>
             <view class="btnFun">
                 <view class="clause">
                     <view class="state" :class="isClause ? 'active' : ''" @click="isClause = !isClause"></view>
-                    <text>同意</text>
-                    <text class="blue" @click="open(3)">《用户服务协议》</text>
-                    <text class="blue" @click="open(4)">《隐私条款》</text>
+                    <text>{{$t('login[5]')}}</text>
+                    <text class="blue" @click="open(3)">{{$t('login[6]')}}</text>
+                    <text class="blue" @click="open(4)">{{$t('login[7]')}}</text>
                 </view>
-                <button class="lg-btn" @click="register">注册</button>
-                <button class="re-btn" @click="login">登录</button>
+                <button class="lg-btn" @click="register">{{$t('login[1]')}}</button>
+                <button class="re-btn" @click="login">{{$t('login[0]')}}</button>
             </view>
         </view>
 		<uniPopup ref="popup" type="center">

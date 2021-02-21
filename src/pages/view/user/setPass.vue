@@ -4,16 +4,16 @@
             <input type="text" disabled :placeholder="$public.phoneEncryption(tel)"placeholder-style="color: #c4c4c4">
         </view>
         <view class="setIpt">
-            <input type="text"v-model="formData.code" placeholder="请输入验证码"placeholder-style="color: #c4c4c4">
-            <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : '获取验证码'}}</text>
+            <input type="text"v-model="formData.code" :placeholder="$t('content.set[8]')"placeholder-style="color: #c4c4c4">
+            <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : $t('content.set[9]')}}</text>
         </view>
         <view class="setIpt">
-            <input type="password" v-if="iptType == 'password'" v-model="formData.pasw" placeholder="请输入新的登录密码"placeholder-style="color: #c4c4c4">
-            <input type="text" v-else v-model="formData.pasw" placeholder="请输入新的登录密码"placeholder-style="color: #c4c4c4">
+            <input type="password" v-if="iptType == 'password'" v-model="formData.pasw" :placeholder="$t('content.set[11]')"placeholder-style="color: #c4c4c4">
+            <input type="text" v-else v-model="formData.pasw" :placeholder="$t('content.set[11]')"placeholder-style="color: #c4c4c4">
             <image :src="passShow" @click="showPass"></image>
         </view>
         <view class="btnBox">
-            <button class="cu-btn" @click="setPasw">确定</button>
+            <button class="cu-btn" @click="setPasw">{{$t('content.set[10]')}}</button>
         </view>
     </view>
 </template>
@@ -52,6 +52,11 @@
                 },1000)
             }
         },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[22]')
+            })
+        },
         methods:{
             getAuthCodeBefore(){
                 let _this = this;
@@ -80,11 +85,11 @@
             setPasw(){
                 let _this = this;
                 if (!_this.formData.code){
-                    _this.$public.msg('验证码不能为空')
+                    _this.$public.msg(_this.$t('content.set[13]'))
                     return false
                 }
                 if (!_this.formData.pasw){
-                    _this.$public.msg('密码不能为空')
+                    _this.$public.msg(_this.$t('content.set[14]'))
                     return false
                 }
                 let _data = {

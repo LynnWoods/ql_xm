@@ -2,7 +2,7 @@
     <view class="activityContent">
         <view class="nullBox" v-show="!activity_list">
             <image src="@/static/null_1.png"></image>
-            <text>敬请期待</text>
+            <text>{{$t('content.home[8]')}}</text>
         </view>
         <view class="activityList" v-for="(item,index) in activity_list" :key="index" @click="activityDeta(item.id)">
             <image :src="baseUrl+activity_list[0].url"></image>
@@ -24,6 +24,11 @@
         onShow() {
 			this.get_data()
 		},
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[3]')
+            })
+        },
         methods:{
 			get_data(){
 				getBanner({type:1}).then(res=>{

@@ -1,23 +1,23 @@
 <template>
     <view class="affirmContent">
         <view class="details">
-            <text>质押份数</text>
-            <text>{{affirm.amount}} 份</text>
+            <text>{{$t('content.pledge[3]')}}</text>
+            <text>{{affirm.amount}} {{$t('content.pledge[4]')}}</text>
         </view>
         <view class="details">
-            <text>单位产品质押</text>
+            <text>{{$t('content.pledge[5]')}}</text>
             <text>{{affirm.unit}} FIL</text>
         </view>
         <view class="details">
-            <text>质押数量合计</text>
+            <text>{{$t('content.pledge[6]')}}</text>
             <text>{{affirm.unit*affirm.amount}} FIL</text>
         </view>
         <view class="details">
-            <text>质押期限</text>
-            <text>{{affirm.day}} 天</text>
+            <text>{{$t('content.pledge[7]')}}</text>
+            <text>{{affirm.day}} {{$t('content.pledge[8]')}}</text>
         </view>
         <view class="btnBox">
-            <button class="cu-btn" @click="succeedSkip">确认</button>
+            <button class="cu-btn" @click="succeedSkip">{{$t('content.pledge[9]')}}</button>
         </view>
     </view>
 </template>
@@ -36,6 +36,11 @@
 				}
 			}
         },
+        onReady() {
+            uni.setNavigationBarTitle({
+                title: this.$t('header[9]')
+            })
+        },
         onLoad(option){
 			this.affirm.amount=option.number
 			this.affirm.productId = option.id
@@ -44,7 +49,7 @@
 		},
         methods:{
             succeedSkip(){
-				order_create({  
+				order_create({
 					amount:this.affirm.amount,
 					productId:this.affirm.productId
 				}).then(res=>{
@@ -56,7 +61,7 @@
 						this.$public.msg(res.message)
 					}
 				})
-                
+
             }
         }
     }

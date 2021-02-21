@@ -1,22 +1,32 @@
 <template>
     <view class="loginContent">
+        <view class="language">
+            <view class="langShow"@click.stop="isLanguage">
+                <image src="@/static/lang.png" class="lang"></image>
+                <text>{{language}}</text>
+            </view>
+            <view class="langList"v-if="isLang">
+                <text @click="btnLang('zh_cn')">简体中文</text>
+                <text @click="btnLang('en_us')">English</text>
+            </view>
+        </view>
         <image src="@/static/logo.png" class="logo"></image>
         <view class="loginBox">
             <view class="loginIpt">
-                <input type="text" v-model="formData.tel" placeholder="请输入手机号"placeholder-style="color: #a9adbe">
+                <input type="text" v-model="formData.tel" :placeholder="$t('login[3]')"placeholder-style="color: #a9adbe">
             </view>
             <view class="loginIpt">
-                <input type="password" v-if="iptType == 'password'" v-model="formData.password" placeholder="请输入密码"placeholder-style="color: #a9adbe">
-                <input type="text" v-else v-model="formData.password" placeholder="请输入密码"placeholder-style="color: #a9adbe">
+                <input type="password" v-if="iptType == 'password'" v-model="formData.password" :placeholder="$t('login[4]')"placeholder-style="color: #a9adbe">
+                <input type="text" v-else v-model="formData.password" :placeholder="$t('login[4]')"placeholder-style="color: #a9adbe">
                 <image :src="passShow" @click="showPass"></image>
             </view>
-            <view class="forget"><text @click="forget">忘记密码?</text></view>
+            <view class="forget"><text @click="forget">{{$t('login[2]')}}</text></view>
             <view class="btnFun">
                 <view class="clause">
                     <view class="state" :class="isClause ? 'active' : ''" @click="isClause = !isClause"></view>
-                    <text>同意</text>
-                    <text class="blue" @click="open(3)">《用户服务协议》</text>
-                    <text class="blue" @click="open(4)">《隐私条款》</text>
+                    <text>{{$t('login[5]')}}</text>
+                    <text class="blue" @click="open(3)">{{$t('login[6]')}}</text>
+                    <text class="blue" @click="open(4)">{{$t('login[7]')}}</text>
                 </view>
                 <button class="lg-btn" @click="login">{{$t('login[0]')}}</button>
                 <button class="re-btn" @click="register">{{$t('login[1]')}}</button>
@@ -38,15 +48,24 @@
             return{
 				agreement:null,
                 isClause:false,
+                isLang:false,
+                language:'简体中文',
                 iptType:'password',
                 passShow:require('@/static/eye-close.png'),
                 formData:{
-                    tel:'',
-                    password :''
+                    tel:'13219108806',
+                    password :'123456aa'
                 }
             }
         },
-        onLoad() {},
+        onLoad() {
+            let lang = uni.getStorageSync('_lang')
+            if (lang == 'zh_cn'){
+                this.language= '简体中文'
+            } else {
+                this.language= 'English'
+            }
+        },
         computed:{},
         methods:{
             ...mapActions([
@@ -69,17 +88,33 @@
                     _this.passShow = require('@/static/eye-close.png')
                 }
             },
+            isLanguage(el){
+                let _this = this;
+                _this.isLang = !_this.isLang;
+                // el.stopPropagation();
+                document.onclick = function (event) {
+                    _this.isLang = false;
+                }
+            },
+            btnLang(lang){
+                let _this = this
+                this.$i18n.locale = lang
+                uni.setStorageSync('_lang', lang)
+                if (lang == 'zh_cn'){
+                    this.language= '简体中文'
+                } else {
+                    this.language= 'English'
+                }
+                _this.isLang = false
+            },
             login(){
                 let _this = this
-                // this.$i18n.locale = 'zh_cn'
-                // uni.setStorageSync('_lang', 'zh_cn')
-                // return
                 if (!_this.formData.tel){
-                    _this.$public.msg('手机号不能为空')
+                    _this.$public.msg(_this.$t('login[8]'))
                     return false
                 }
                 if (!_this.formData.password){
-                    _this.$public.msg('密码不能为空')
+                    _this.$public.msg(_this.$t('login[9]'))
                     return false
                 }
                 let _data = {
@@ -88,7 +123,7 @@
                 }
 				if(this.isClause){
 					uni.showLoading({
-						title: '登录中....'
+						title: _this.$t('login[11]')+'....'
 					});
 					submitLogin(_data).then(res=>{
 						if (res.code == 200){
@@ -110,7 +145,7 @@
 						console.log(err)
 					})
 				}else{
-					_this.$public.msg('请同意并阅读该协议')
+					_this.$public.msg(_this.$t('login[10]'))
 				}
 
             },
@@ -134,6 +169,44 @@
     page{padding: 0;background-color: #fff}
     .loginContent{
         padding-top: 174rpx;
+        .language{
+            position: absolute;
+            right: 80rpx;
+            top: 50rpx;
+            .langShow{
+                display: flex;
+                align-items: center;
+                font-size: 30rpx;
+                font-weight: 600;
+                padding-right: 30rpx;
+                background-image: url("@/static/dow.png");
+                background-size: 30rpx 35rpx;
+                background-repeat: no-repeat;
+                background-position: 100%;
+                .lang{
+                    width: 40rpx;
+                    height: 40rpx;
+                }
+                text{
+                    padding: 0 10rpx;
+                }
+            }
+            .langList{
+                -moz-box-shadow:0rpx 0rpx 10rpx #eee;
+                -webkit-box-shadow:0rpx 0rpx 10rpx #eee;
+                box-shadow:0rpx 0rpx 10rpx #eee;
+                text{
+                    display: block;
+                    text-align: center;
+                    line-height: 80rpx;
+                    font-size: 30rpx;
+                    font-weight: 600;
+                }
+                text:nth-child(1){
+                    border-bottom: 2rpx solid #eee;
+                }
+            }
+        }
         .logo{
             display: block;
             width: 176rpx;

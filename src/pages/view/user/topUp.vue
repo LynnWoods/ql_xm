@@ -3,8 +3,8 @@
         <uni-nav-bar background-color="#F3F3F3" shadow="false" fixed="true">
             <view class="navBar">
                 <image src="@/static/left.png" @click="returnIndex"></image>
-                <view class="tit">充币</view>
-                <view class="rightTit"@click="topupDetail">明细</view>
+                <view class="tit">{{$t('content.user[10]')}}</view>
+                <view class="rightTit"@click="topupDetail">{{$t('content.user[11]')}}</view>
             </view>
         </uni-nav-bar>
 		<!-- <view id="qrCode" ref="qrCodeDiv"></view> -->
@@ -13,7 +13,7 @@
             <view class="dropdownItem">
                 <view class="dropdownSelected" @click="changePopup">
                     <view class="iptCode">
-                        <text>币种</text>
+                        <text>{{$t('content.user[12]')}}</text>
                         <view>{{vlaTxt}}  <image src="@/static/more.png"></image></view>
                     </view>
                 </view>
@@ -23,7 +23,7 @@
                 </view>
             </view>
             <view class="chainName" v-if="vlaTxt=='USDT'">
-                <view class="name">链名称</view>
+                <view class="name">{{$t('content.user[13]')}}</view>
                 <view class="trc">ERC20</view>
             </view>
             <view class="imageCode">
@@ -46,8 +46,8 @@
 					     @result="qrR" />
 					 </view>
                 </view>
-                <view class="preserve" @tap="saveQrcode">保存二维码至相册</view>
-                <text class="addr">充币地址</text>
+                <view class="preserve" @tap="saveQrcode">{{$t('content.user[14]')}}</view>
+                <text class="addr">{{$t('content.user[15]')}}</text>
                 <view class="copyAddr">
                     <view class="textAddr">{{addrVla}}</view>
                     <image src="@/static/copy.png" @click="copy(addrVla)"></image>

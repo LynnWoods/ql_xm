@@ -9,6 +9,8 @@ const baseUrl = 'http://192.168.0.117:8081';
 const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.117:8081';
 // const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.117:8081';
 // #endif
+
+let lang = uni.getStorageSync('_lang')
 const request = {
     globalGet(url, data, contentType){
         return new Promise((resolve, reject) => {
@@ -19,13 +21,12 @@ const request = {
 				sslVerify: false,
                 header: {
                     'Content-Type': contentType || 'application/x-www-form-urlencoded',
-                    'auth-token': ComTools.getToken() || ''
+                    'auth-token': ComTools.getToken() || '',
+                    'language': lang || 'zh_cn'
                 },
                 success: (response) => {
                     let res = response.data
 					if(res.code==401){
-						// console.log(111)
-						// Public.msg(res.message)
 						uni.navigateTo({
 						    url:'/pages/login/login'
 						})
@@ -56,7 +57,8 @@ const request = {
                 header: {
                     // 'Content-Type': contentType || 'application/json;charset=UTF-8'
                 	'Content-Type': contentType || 'application/x-www-form-urlencoded',
-                    'auth-token': ComTools.getToken() || ''
+                    'auth-token': ComTools.getToken() || '',
+                    'language': lang || 'zh_cn',
                 },
                 success: (response) => {
                     let res = response.data

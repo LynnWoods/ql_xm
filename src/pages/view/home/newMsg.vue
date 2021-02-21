@@ -22,12 +22,10 @@
                 autoHeights:'',
                 iconImg:require('@/static/bbc.png'),
 				advisory_list:[]
-				
+
             }
         },
-        onLoad(){
-			
-        },
+        onLoad(){},
 		onShow(){
 			cms_advisory({}).then(res=>{//新闻资讯
 				this.advisory_list = res.data.list
@@ -45,6 +43,9 @@
             }else {
                 this.autoHeights = this.winHeight + 'px'
             }
+            uni.setNavigationBarTitle({
+                title: this.$t('header[2]')
+            })
         },
         methods:{
 			msg_info(id){

@@ -3,15 +3,15 @@
         <uni-nav-bar background-color="#F3F3F3" shadow="false" fixed="true">
             <view class="navBar">
                 <image src="@/static/left.png" @click="returnIndex"></image>
-                <view class="tit">提币</view>
-                <view class="rightTit"@click="extractDetail">明细</view>
+                <view class="tit">{{$t('content.user[17]')}}</view>
+                <view class="rightTit"@click="extractDetail">{{$t('content.user[11]')}}</view>
             </view>
         </uni-nav-bar>
         <view class="extractContent" >
             <view class="dropdownItem">
                 <view class="dropdownSelected" @click="changePopup">
                     <view class="iptCode">
-                        <text>币种</text>
+                        <text>{{$t('content.user[12]')}}</text>
                         <view>{{vlaTxt}}  <image src="@/static/more.png"></image></view>
                     </view>
                 </view>
@@ -21,30 +21,30 @@
                 </view>
             </view>
             <view class="chainName" v-if="vlaTxt == 'USDT'">
-                <view class="name">链名称</view>
+                <view class="name">{{$t('content.user[13]')}}</view>
                 <view class="trc">ERC20</view>
             </view>
             <view class="chainName">
-                <view class="name">提币地址</view>
+                <view class="name">{{$t('content.user[18]')}}</view>
                 <view class="iptNum">
-                    <input type="text" value=""placeholder-style="color: #c4c4c4" v-model="withdraw.address" placeholder="请输入或长按粘贴地址">
+                    <input type="text" value=""placeholder-style="color: #c4c4c4" v-model="withdraw.address" :placeholder="$t('content.user[22]')">
                     <image src="@/static/scan.png"></image>
                 </view>
             </view>
             <view class="chainName">
-                <view class="name">数量</view>
+                <view class="name">{{$t('content.user[19]')}}</view>
                 <view class="iptNum">
-                    <input type="number" value=""placeholder-style="color: #c4c4c4" v-model="number" :placeholder="`最小提币数量 ${minWithdrawAmount}`">
+                    <input type="number" value=""placeholder-style="color: #c4c4c4" v-model="number" :placeholder="`${$t('content.user[21]')} ${minWithdrawAmount}`">
                     <view class="suffix">
                         <text>{{vlaTxt}}</text>
                         <text class="long"></text>
-                        <text @click="all">全部</text>
+                        <text @click="all">{{$t('content.user[20]')}}</text>
                     </view>
                 </view>
             </view>
-            <view class="usableNum">可用 {{banlance}} {{vlaTxt}}</view>
+            <view class="usableNum">{{$t('content.user[23]')}} {{banlance}} {{vlaTxt}}</view>
             <view class="chainName">
-                <view class="name">手续费</view>
+                <view class="name">{{$t('content.user[24]')}}</view>
                 <view class="iptNum">
 					<!-- <view>{{withdraw.fee}}</view> -->
                     <input type="text" :value="withdraw.fee"placeholder-style="color: #c4c4c4" disabled>
@@ -56,27 +56,27 @@
 			<view class="chainName">
 			    <view class="iptNum">
 			        <view class="suffix">
-			            <text>交易密码</text>
+			            <text>{{$t('content.user[25]')}}</text>
 			        </view>
-			        <input type="password" v-model="jyPassword"placeholder-style="color: #c4c4c4" style="text-align: right" placeholder="请输入交易密码">
+			        <input type="password" v-model="jyPassword"placeholder-style="color: #c4c4c4" style="text-align: right" :placeholder="$t('content.user[26]')">
 			    </view>
 			</view>
 			<view class="chainName">
-				<view class="name">提币验证码</view>
+				<view class="name">{{$t('content.user[27]')}}</view>
 				<div class="iptNum">
-					<input type="text" v-model="withdraw.code" placeholder="请输入验证码"placeholder-style="color: #c4c4c4">
-					<text @click="getAuthCodeBefore" class="send_code">{{sendCodeFlag ? intervalTime : '获取验证码'}}</text>
+					<input type="text" v-model="withdraw.code" :placeholder="$t('content.user[28]')"placeholder-style="color: #c4c4c4">
+					<text @click="getAuthCodeBefore" class="send_code">{{sendCodeFlag ? intervalTime : $t('content.user[29]')}}</text>
 				</div>
 			</view>
             <view class="showClass" v-if="showList" @click="closePopup"></view>
         </view>
         <view class="botmFixed">
             <view class="accountNum">
-                <text>预计到账数量</text>
+                <text>{{$t('content.user[30]')}}</text>
                 <text> {{withdraw.totalAmount}} {{withdraw.totalAmount?vlaTxt:''}}</text>
             </view>
             <view class="btnBox">
-                <button class="cu-btn" @click="submit_data">提币</button>
+                <button class="cu-btn" @click="submit_data">{{$t('content.user[31]')}}</button>
             </view>
         </view>
     </view>
