@@ -53,7 +53,7 @@
                 iptType:'password',
                 passShow:require('@/static/eye-close.png'),
                 formData:{
-                    tel:'13219108806',
+                    tel:'132191088061',
                     password :'123456aa'
                 }
             }

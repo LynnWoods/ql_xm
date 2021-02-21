@@ -10,7 +10,7 @@ const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.
 // const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.117:8081';
 // #endif
 
-let lang = uni.getStorageSync('_lang')
+
 const request = {
     globalGet(url, data, contentType){
         return new Promise((resolve, reject) => {
@@ -22,7 +22,7 @@ const request = {
                 header: {
                     'Content-Type': contentType || 'application/x-www-form-urlencoded',
                     'auth-token': ComTools.getToken() || '',
-                    'language': lang || 'zh_cn'
+                    'language': uni.getStorageSync('_lang') || 'zh_cn'
                 },
                 success: (response) => {
                     let res = response.data
@@ -58,7 +58,7 @@ const request = {
                     // 'Content-Type': contentType || 'application/json;charset=UTF-8'
                 	'Content-Type': contentType || 'application/x-www-form-urlencoded',
                     'auth-token': ComTools.getToken() || '',
-                    'language': lang || 'zh_cn',
+                    'language': uni.getStorageSync('_lang') || 'zh_cn',
                 },
                 success: (response) => {
                     let res = response.data

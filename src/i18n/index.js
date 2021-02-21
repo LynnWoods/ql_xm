@@ -8,6 +8,7 @@ let lang = uni.getStorageSync('_lang')
 if (!lang || lang === 'System') {
     const res = uni.getSystemInfoSync()
     lang = res.language
+    console.log('123')
     uni.setStorageSync('_lang', 'System')
 }
 const i18n = new VueI18n({
