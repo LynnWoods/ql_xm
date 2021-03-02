@@ -137,7 +137,7 @@
 					this.stompClient.ws.close();
 				}
 				let stompClient = null;
-				const websocket = new SockJS("http://192.168.0.117:8081/market/market-ws");
+				const websocket = new SockJS("http://api.wjyk.website/market/market-ws");
 				stompClient = Stomp.over(websocket);
 				_this.stompClient = stompClient;
 				stompClient.debug = false;

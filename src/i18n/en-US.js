@@ -7,8 +7,8 @@ module.exports = {
         'Please enter your cell phone number',
         'enter your PIN ',
         'consent',//5
-        '《User Service Agreement》',
-        '《Privacy policy》',
+        '《User Services Pact》',
+        '《Privacy Policy》',
         'The phone number cannot be blank',
         'The password cannot be empty',
         'Please agree and read this agreement',//10
@@ -109,7 +109,7 @@ module.exports = {
             '质押时间',
             '查看详情',
         ],
-        bazaar:[
+        bazaar: [
             '爆款',
             '开始预售倒计时',
             '正在销售中',

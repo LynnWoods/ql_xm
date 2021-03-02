@@ -1,12 +1,12 @@
 import dtime from "time-formater";
 let Public = new Object()
 // #ifdef APP-PLUS
-Public.img_host = 'http://192.168.0.117:8081';
+Public.img_host = 'http://api.wjyk.website';
 // #endif
 
 // #ifndef APP-PLUS
-Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.117:8081';
-// Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.117:8081';
+Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
+// Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
 // #endif
 
 //传一个手机号 返回手机号的前3位和后四位 其他的显示* (手机号加密)

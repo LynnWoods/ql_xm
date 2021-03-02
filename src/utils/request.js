@@ -2,12 +2,12 @@
 import { ComTools } from './tools.js'
 import {Public} from './public.js'
 // #ifdef APP-PLUS
-const baseUrl = 'http://192.168.0.117:8081';
+const baseUrl = 'http://api.wjyk.website';
 // #endif
 
 // #ifndef APP-PLUS
-const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.117:8081';
-// const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.117:8081';
+const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
+// const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
 // #endif
 
 
