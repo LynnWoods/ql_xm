@@ -79,7 +79,7 @@
             "disableHostCheck" : true,
             "proxy" : {
                 "/api" : {
-                     "target" : "http://api.wjyk.website",
+                     "target" : "http://wjykcs.wisvalley.cn",
                     "changeOrigin" : true,
                     "secure" : false,
                     "pathRewrite" : {

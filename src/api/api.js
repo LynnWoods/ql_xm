@@ -1,11 +1,11 @@
 import request from '@/utils/request.js'
 // #ifdef APP-PLUS
-export let baseUrl = 'http://api.wjyk.website';
+export let baseUrl = 'http://wjykcs.wisvalley.cn';
 // #endif
 // #ifndef APP-PLUS
 // export let baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://qlky.wisvalley.cn';
 //
-export let baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
+export let baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://wjykcs.wisvalley.cn';
 // #endif
 export function submitLogin(params){//登录
     return request.globalPost(

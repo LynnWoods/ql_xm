@@ -1,272 +1,272 @@
 //英文
 module.exports = {
     login:[
-        'Login',
-        'register',
-        'forget the password?',
-        'Please enter your cell phone number',
-        'enter your PIN ',
-        'consent',//5
-        '《User Services Pact》',
-        '《Privacy Policy》',
-        'The phone number cannot be blank',
-        'The password cannot be empty',
-        'Please agree and read this agreement',//10
-        'be logging in',
+        'Log in',
+        'Register',
+        'Forgot password?',
+        'Please enter phone number',
+        'Please enter password',
+        'Agree',//5
+        '《User Contract》',
+        '《Privacy》',
+        'Phone number must be filled',
+        'Password must be filled',
+        'Please agree and read the agreement',//10
+        'Logging in',
     ],
     forget:[
-        'retrieve password',
-        'Please enter your cell phone number',
-        'Please enter the verification code',
+        'Retrieve password',
+        'Please enter phone number',
+        'Please enter verification code',
         'code',
         'Please enter a new password',
-        'Please reconfirm the new password',//5
-        'reset passwords',
-        'The phone number cannot be blank',
-        'The CAPTCHA cannot be empty',
-        'The password cannot be empty',
-        'The two passwords do not match',
+        'Please confirm the new password again',//5
+        'Reset Password',
+        'Phone number must be filled',
+        'Verification code must be filled',
+        'Password must be filled',
+        'Two password entries are inconsistent',
     ],
     register:[
-        'Invitation code(required)',
+        'Invitation code',
     ],
     header:[
-        '麒麟礦業',
-        '公告',
-        '新闻资讯',
-        '活动列表',
-        '活动详情',
-        'Filecoin挖矿成本实时',//5
-        '质押产品',
-        '新闻详情',
-        'FIL 质押挖矿',
-        '确认质押',
-        '质押成功',//10
-        '算力',
-        '产品详情',
-        '我的',
-        '明细',
-        '我的订单',//15
-        '明细',
-        'Filecoin 质押',
-        '订单详情',
-        '确认解锁',
-        '安全中心',//20
-        '修改手机号码',
-        '修改登录密码',
-        '修改交易密码',
-        '关于我们',
+        'Kylin Mining',
+        'Announcement',
+        'News',
+        'Events List',
+        'Activity details',
+        'Filecoin mining costs',//5
+        'Pledged products',
+        'News details',
+        'FIL Pledge mining',
+        'Confirm pledge',
+        ' Successful pledge',//10
+        'Hash rate',
+        'Product Details',
+        'My account',
+        'Detail',
+        'My Order',//15
+        'Detail',
+        'Filecoin pledge',
+        'order details',
+        'Confirm unlock',
+        'Security center',//20
+        'Modify phone number',
+        'Modify login password',
+        'Modify trade password',
+        'About us',
     ],
     footer:[
-        '首页',
-        '质押',
-        '算力',
-        '我的'
+        'Home',
+        'Pledge',
+        'Hash rate',
+        'My'
     ],
     content:{
         home:[
-            '活动中心',
-            '新闻资讯',
-            '更多',
-            'Filecoin挖矿成本实时查询',
-            '币种行情',
-            '币种/市值',//5
-            '最新价',
-            '24H涨跌幅',
-            '敬请期待',
-            '暂无数据哦～',
-            '了解详情',//10
-            '暂无相关数据',
-            '没有更多数据了',
+            'Activity centre',
+            'News',
+            'More',
+            'Filecoin mining cost real-time query',
+            'Currency Quotes',
+            'Currency/Market Value',//5
+            'Latest price',
+            '24H changes',
+            'Stay tuned',
+            'No record～',
+            'Learn more',//10
+            'No record',
+            'No more record',
         ],
         pledge:[
-            '年化收益率',
-            '开始销售倒计时',
-            '活动已结束',
-            '质押份数',
-            '份',
-            '单位产品质押',//5
-            '质押数量合计',
-            '质押期限',
-            '天',
-            '确认',
-            '预计年化收益率',//10
-            '购买质押产品',
-            '最小份数为',
-            '可用',
-            '全部',
-            '剩余份数',//15
-            '剩余数量',
-            '详细规则',
-            '我已阅读',
-            '《质押协议》',
-            '质押',//20
-            '请阅读并同意《质押协议》',
-            '购买质押产品不能为小数',
-            '请输入要购买质押产品的份数',
-            '您要购买质押产品的份数最小为',
-            '您要购买质押产品的最多份数为',//25
-            '质押时间',
-            '查看详情',
+            'Annualized rate of return',
+            'Countdown to sales start',
+            'The event is over',
+            'Number of pledges',
+            'Unit',
+            'One unit product pledge',//5
+            'Total pledge quantity',
+            'Pledge period',
+            'Day',
+            'Confirm',
+            'Est Annualized return rate',//10
+            'Purchase products',
+            'Minimum Quantity',
+            'Available',
+            'Total',
+            'Remaining units',//15
+            'Remaining Quantity',
+            'Detailed rules',
+            'I have read',
+            '《Pledge agreement》',
+            'Pledge',//20
+            'Read and agree to the《Pledge Pact》',
+            'The purchase Quantity cannot be decimal',
+            'Enter the number of product to be purchased',
+            'Minimum number of products to purchase',
+            'Maximum number of products to purchase',//25
+            'Pledge time',
+            'check details',
         ],
-        bazaar: [
-            '爆款',
-            '开始预售倒计时',
-            '正在销售中',
-            '剩余算力',
-            '详情介绍',
-            '立即购买',//5
-            '距离开抢',
-            '您还未设置交易密码,请前往设置',
-            '取消',
-            '立即前往',
-            '算力名称',//10
-            '单价',
-            '购买产品数量',
-            '产品总额',
-            '我已阅读',
-            '《算力购买协议》',//15
-            '总计金额',
-            '立即支付',
-            '交易密码',
-            '请输入交易密码',
-            '确定',//20
-            '购买成功,请到我的订单查看',
-            '返回',
-            '请认真阅读购买协议!',
-            '金额',
-            '产品有效期',//25
-            '天',
-            '剩余算力',
-            '开挖时间',
+        bazaar:[
+            'Hot products',
+            'Countdown to pre-sale start',
+            'On sale',
+            'Remaining hash rate',
+            'Detail intruduction',
+            'Buy now',//5
+            'Countdown to sale start',
+            'You have not set a trading password, please go to settings',
+            'Cancel',
+            'Go now',
+            'Name of hash rate',//10
+            'Unit price',
+            'Purchase quantity',
+            'Total product amount',
+            'I have read',
+            '《Hash Rate Purchase Pact》',//15
+            'Total Amount',
+            'Pay now',
+            'Trade password',
+            'Please enter trade password',
+            'Confirm',//20
+            'The purchase is successful, please check my order',
+            'Back',
+            'Please read the purchase agreement!',
+            'Amount',
+            'Product validity period',//25
+            'Day',
+            'Remaining hash rate',
+            'Time to start mining',
         ],
         user:[
-            '总资产折合',
-            '充币',
-            '提币',
-            '转账',
-            '资产',
-            '我的订单',//5
-            '邀请好友',
-            '安全设置',
-            '关于我们',
-            '检查更新',
-            '充币',//10
-            '明细',
-            '币种',
-            '链名称',
-            '保存二维码至相册',
-            '充币地址',//15
-            '已充币',
-            '提币',
-            '提币地址',
-            '数量',
-            '全部',//20
-            '最小提币数量',
-            '请输入或长按粘贴地址',
-            '可用',
-            '手续费',
-            '交易密码',//25
-            '请输入交易密码',
-            '提币验证码',
-            '请输入验证码',
-            '获取验证码',
-            '预计到账数量',//30
-            '提币',
-            '已提币',
-            '提币中',
-            '提币拒绝',
-            '转账',//35
-            '对方账户',
-            '请输入对方帐号,仅限APP内转',
-            '转账金额',
-            '确认转账',
-            '已转账',//40
-            '转账失败',
-            '资产',
-            '估值',
-            '可用余额',
-            '待释放收益',//45
-            '总余额',
+            'Total assets converted',
+            'Recharge',
+            'Withdrawal',
+            'Transfer',
+            'Assets',
+            'My order',//5
+            'Invite friends',
+            'Security Settings',
+            'About us',
+            'Check to updates',
+            'Recharge',//10
+            'Details',
+            'Currency',
+            'Name of chain',
+            'Save the QR code to the album',
+            'Recharge address',//15
+            'Recharged',
+            'Withdrawal',
+            'Withdrawal address',
+            'Quantity',
+            'Total',//20
+            'Minimum withdrawal quantity',
+            'Please enter or long press to paste the address',
+            'Available',
+            'Fee',
+            'Trade password',//25
+            'Please enter trade password',
+            'Withdrawal verification code',
+            'please enter verification code',
+            'code',
+            'Estimated quantity to your account',//30
+            'Withdrawal',
+            'Withdrawn',
+            'Withdrawaling',
+            'Withdrawal refused',
+            'Transfer',//35
+            'Transfer account',
+            'Enter the Transfer account, only for in-app',
+            'Amount of transfer',
+            'Confirm transfer',
+            'Transferred',//40
+            'Transfer failed',
+            'Assets',
+            'Valuation',
+            'Available Balance',
+            'Unreleased income',//45
+            'Total balance',
         ],
         userList:[
-            '算力',
-            '质押',
-            '待收益',
-            '已完成',
-            '已解锁',
-            '解锁中',//5
-            '收益中',
-            '质押时间',
-            '质押数量',
-            '质押期限',
-            '天',//10
-            '待分发',
-            '分发中',
-            '已完成',
-            '数量',
-            '开挖时间',//15
-            '时间',
-            '今日收益',
-            '累计收益',
-            '解锁状态',
-            '质押状态',//20
-            '待收益',
-            '已完成',
-            '已解锁',
-            '解锁中',
-            '收益中',//25
-            '预计年化收益率',
-            '质押数量',
-            '解锁数量',
-            '违约手续费',
-            '实际到账',//30
-            '起始时间',
-            '解锁时间',
-            '到期时间',
-            '质押期限',
-            '已持有',//35
-            '解锁',
-            '订单数量',
-            '算力有效期',
-            '算力状态',
-            '待分发',//40
-            '分发中',
-            '订单金额',
-            '订单编号',
-            '订单时间',
-            '到账时间',//45
-            '详细规则',
-            '确认解锁',
+            'Hash rate',
+            'Pledge',
+            'Remaining income',
+            'Completed',
+            'Unlocked',
+            'Unlocking',//5
+            'Income',
+            'Pledge time',
+            'Pledge Quantity',
+            'Pledge period',
+            'Day',//10
+            'To be distributed',
+            'Distributing',
+            'Completed',
+            'Quantity',
+            'Time to start dig',//15
+            'Time',
+            'Todays income',
+            'Cumulative income',
+            'Unlocking',
+            'Pledging',//20
+            'to',
+            'Completed',
+            'Unlocked',
+            'Unlocking',
+            'In revenue',//25
+            'Est annualized yield rate',
+            'Pledge Quantity',
+            'Unlock quantity',
+            'Default fee',
+            'Actually arrived',//30
+            'Start time',
+            'Unlock time',
+            'Expire date',
+            'Pledge period',
+            'Hold',//35
+            'Unlock',
+            'Quantity of order',
+            'Hash rate validity period',
+            'State of computing power',
+            'To be distributed',//40
+            'Distributing',
+            'Order amount',
+            'Order number',
+            'Order time',
+            'Arrival time',//45
+            'Detailed rules',
+            'Confirm unlock',
         ],
         invite:[
-            '我的邀请码',
-            '复制',
-            '邀请记录',
-            '被邀请人注册后生效',
-            '日期',
-            '邀请人手机号',//5
-            '生成邀请卡',
-            '长按保存图片',
+            'My Invitation code',
+            'Copy',
+            'Invitation record',
+            'Invitee be invalid after register',
+            'Date',
+            'phone number',//5
+            'Get invitation card',
+            'Long press to save the picture',
         ],
         set:[
-            '我的帐号',
-            '登录密码',
-            '修改',
-            '交易密码',
-            '去修改',
-            '去设置',//5
-            '退出登录',
-            '请输入新手机号',
-            '请输入验证码',
-            '获取验证码',
-            '确定',//10
-            '请输入新的登录密码',
-            '请输入新的交易密码',
-            '验证码不能为空',
-            '密码不能为空',
-            '手机号不能为空',//15
-            '交易密码不能为空',
+            'My account',
+            'Login password',
+            'Modify',
+            'Trade password',
+            'To modify',
+            'To set',//5
+            'Log out',
+            'Please enter new phone number',
+            'Please enter Verification code',
+            'code',
+            'Confirm',//10
+            'Please enter new login password',
+            'Please enter new trade password',
+            'Verification code must be filled',
+            'Password must be filled',
+            'Phone number must be filled',//15
+            'Trade password must be filled',
         ]
     }
 }

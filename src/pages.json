@@ -223,6 +223,12 @@
 			}
         },
         {
+          "path" : "pages/view/home/rank_list",
+          "style" : {
+            "navigationBarTitleText": "榜单"
+          }
+        },
+        {
             "path" : "pages/view/home/FIL_now/FIL_now"
         },
 		{

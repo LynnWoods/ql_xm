@@ -4,10 +4,10 @@
             <image src="@/static/filecoin.png" class="extractImg"></image>
             <view class="message">
                 <view>
-                    <text class="text" v-if="item.status==3">{{$t('content.user[32]')}}</text>
+                    <text class="text" v-if="item.status==1">{{$t('content.user[32]')}}</text>
 					<text class="text" v-if="item.status==0">{{$t('content.user[33]')}}</text>
 					<text class="text" v-if="item.status==2">{{$t('content.user[34]')}}</text>
-                    <text class="priceNum black" v-if="item.status==3">{{'-'+item.arrivedAmount}}</text>
+                    <text class="priceNum black" v-if="item.status==1">{{'-'+item.arrivedAmount}}</text>
 					<text class="priceNum green" v-if="item.status==0">{{'-'+item.arrivedAmount}}</text>
 					<text class="priceNum black" v-if="item.status==2">{{'+'+item.arrivedAmount}}</text>
                 </view>

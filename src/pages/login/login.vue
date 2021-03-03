@@ -135,6 +135,7 @@
 								uni.switchTab({
 									url: '/pages/index/index',
 								})
+                                window.location.reload();
 							},2000)
 						}else {
 							uni.hideLoading();

@@ -69,6 +69,10 @@
 				</view>
 			</view>
 		</view>
+<!--		<view class="notice">-->
+<!--			<view class="query" @click="bannerLink('/pages/view/home/rank_list')">今天你上榜了吗</view>-->
+<!--			<view class="rightBtn"></view>-->
+<!--		</view>-->
 		<view class="notice">
 			<view class="query" @click="bannerLink('/pages/view/home/FIL_now/FIL_now')">{{$t('content.home[3]')}}</view>
 			<view class="rightBtn"></view>
@@ -112,9 +116,7 @@
 				coin_scoket:null
 			}
 		},
-		onLoad() {
-
-		},
+		onLoad() {},
 		onShow(){
 			this.init()
 			// 进入首页时执行长连接
@@ -137,7 +139,7 @@
 					this.stompClient.ws.close();
 				}
 				let stompClient = null;
-				const websocket = new SockJS("http://api.wjyk.website/market/market-ws");
+				const websocket = new SockJS("http://wjykcs.wisvalley.cn/market/market-ws");
 				stompClient = Stomp.over(websocket);
 				_this.stompClient = stompClient;
 				stompClient.debug = false;

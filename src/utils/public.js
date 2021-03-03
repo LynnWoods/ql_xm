@@ -1,11 +1,11 @@
 import dtime from "time-formater";
 let Public = new Object()
 // #ifdef APP-PLUS
-Public.img_host = 'http://api.wjyk.website';
+Public.img_host = 'http://wjykcs.wisvalley.cn';
 // #endif
 
 // #ifndef APP-PLUS
-Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
+Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://wjykcs.wisvalley.cn';
 // Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
 // #endif
 
