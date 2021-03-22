@@ -2,7 +2,7 @@
 
   <view class="uni-navbar">
     <view
-      :class="{'uni-navbar--fixed': fixed,'uni-navbar--shadow':border,'uni-navbar--border':border}"
+      :class="{'uni-navbar--fixed': fixed,'uni-navbar--shadow':border,'uni-navbar--border':border,'uni-navbar--shadowBorder':hides}"
       :style="{'background-color':backgroundColor}"
       class="uni-navbar__content">
       <uni-status-bar v-if="statusBar"/>
@@ -118,6 +118,10 @@ export default {
     border: {
       type: [String, Boolean],
       default: true
+    },
+    hides:{
+      type: [String, Boolean],
+      default: false
     }
   },
   methods: {
@@ -220,5 +224,11 @@ export default {
 			transform: scaleY(.5);
 			background-color: $uni-border-color;
 		}
+      &--shadowBorder{
+        box-shadow: 0 0px 0px #ccc;
+      }
+      &--shadowBorder:after{
+        height: 0;
+      }
 	}
 </style>

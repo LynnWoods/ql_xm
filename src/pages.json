@@ -225,7 +225,7 @@
         {
           "path" : "pages/view/home/rank_list",
           "style" : {
-            "navigationBarTitleText": "榜单"
+			  "navigationStyle": "custom"
           }
         },
         {

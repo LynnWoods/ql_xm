@@ -22,7 +22,10 @@
             </view>
             <view class="chainName" v-if="vlaTxt == 'USDT'">
                 <view class="name">{{$t('content.user[13]')}}</view>
-                <view class="trc">ERC20</view>
+                <view class="chainList">
+                    <view class="trc":class="isActive == '1'?'active':''" @click="selectActive('1')">TRC20</view>
+                    <view class="trc":class="isActive == '2'?'active':''" @click="selectActive('2')">ERC20</view>
+                </view>
             </view>
             <view class="chainName">
                 <view class="name">{{$t('content.user[18]')}}</view>
@@ -102,10 +105,12 @@
 					fee:'',
 					jyPassword:'',
 					code:'',
-					number:''
+					number:'',
+                    type:'1'
 				},
                 minWithdrawAmount:'',
 				banlance:'',
+                isActive:1
             }
         },
         onShow(){
@@ -164,6 +169,22 @@
 				this.withdraw.jyPassword =this.$utils.encrypt(this.jyPassword)
 				this.withdraw.coin = this.vlaTxt;
 				// console.log(this.withdraw)
+                //
+                // let _data = {
+                //     coin:this.withdraw.coin,
+                //     address:this.withdraw.address,
+                //     totalAmount:this.number,
+                //     fee:this.withdraw.fee,
+                //     jyPassword:this.withdraw.jyPassword,
+                //     code:this.withdraw.code,
+                //     type:this.withdraw.type
+                // }
+                // if (this.withdraw.coin == 'FIL'){
+                //     delete _data.type
+                // }
+                // // console.log(this.withdraw.type)
+                // console.log(_data)
+                // return
 				wallet_withdraw({
 					coin:this.withdraw.coin,
 					address:this.withdraw.address,
@@ -222,6 +243,10 @@
                 uni.navigateTo({
                     url:'/pages/view/user/extractDetail'
                 })
+            },
+            selectActive(index){
+			    this.isActive = index;
+                this.withdraw.type = index;
             }
         }
     }
@@ -317,16 +342,25 @@
                 font-weight: 600;
                 color: #495068;
             }
-            .trc{
-                width: 138rpx;
-                height: 52rpx;
-                line-height: 52rpx;
-                text-align: center;
-                border-radius: 16rpx;
-                background-color: #9aa6cd;
-                font-size: 14px;
-                color: #ffffff;
-                margin-top: 20rpx;
+            .chainList{
+                display: flex;
+                align-items: center;
+                .trc{
+                    width: 138rpx;
+                    height: 52rpx;
+                    line-height: 52rpx;
+                    text-align: center;
+                    border-radius: 16rpx;
+                    font-size: 14px;
+                    margin-top: 20rpx;
+                    margin-right: 20rpx;
+                    border: 2rpx solid #9aa6cd;
+                    color: #9aa6cd;
+                }
+                .active{
+                    background-color: #9aa6cd;
+                    color: #fff;
+                }
             }
             .iptNum{
                 display: flex;

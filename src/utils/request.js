@@ -6,8 +6,8 @@ const baseUrl = 'http://wjykcs.wisvalley.cn';
 // #endif
 
 // #ifndef APP-PLUS
+// const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://wjykcs.wisvalley.cn';
 const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://wjykcs.wisvalley.cn';
-// const baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.118:8081';
 // #endif
 
 

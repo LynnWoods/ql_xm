@@ -24,7 +24,10 @@
             </view>
             <view class="chainName" v-if="vlaTxt=='USDT'">
                 <view class="name">{{$t('content.user[13]')}}</view>
-                <view class="trc">ERC20</view>
+                <view class="topFlex">
+                    <view class="trc":class="isActive == '1'?'active':''"@click="selectActive('1')">TRC20</view>
+                    <view class="trc":class="isActive == '2'?'active':''"@click="selectActive('2')">ERC20</view>
+                </view>
             </view>
             <view class="imageCode">
                 <view class="code">
@@ -69,6 +72,7 @@
         data(){
             return{
                 showList:false,
+                isActive:1,
                 vlaTxt:'FIL',
                 addrVla:'',
 				chainEnum:'',
@@ -98,7 +102,11 @@
 				if(this.vlaTxt=='FIL'){
 					this.chainEnum= 'FILECOIN'
 				}else{
-					this.chainEnum = 'ERC20'
+				    if (this.isActive == 1){
+                        this.chainEnum = 'TRC20'
+                    }else {
+                        this.chainEnum = 'ERC20'
+                    }
 				}
 				deposit_create_addr({chainEnum:this.chainEnum}).then(res=>{
 					let _this = this
@@ -175,6 +183,10 @@
                         })
                     }
                 })
+            },
+            selectActive(index){
+                this.isActive = index;
+                this.get_addr()
             }
         }
     }
@@ -281,17 +293,30 @@
                 font-weight: 600;
                 color: #495068;
             }
-            .trc{
-                width: 138rpx;
-                height: 52rpx;
-                line-height: 52rpx;
-                text-align: center;
-                border-radius: 16rpx;
-                background-color: #9aa6cd;
-                font-size: 14px;
-                color: #ffffff;
-                margin-top: 20rpx;
+            .topFlex{
+                display: flex;
+                align-items: center;
+                .trc:nth-child(1){
+                    margin-right: 20rpx;
+                }
+                .trc{
+                    width: 138rpx;
+                    height: 52rpx;
+                    line-height: 52rpx;
+                    text-align: center;
+                    border-radius: 16rpx;
+                    font-size: 14px;
+                    margin-top: 20rpx;
+                    margin-right: 20rpx;
+                    border: 2rpx solid #9aa6cd;
+                    color: #9aa6cd;
+                }
+                .active{
+                    background-color: #9aa6cd;
+                    color: #fff;
+                }
             }
+
         }
         .imageCode{
             background-color: #fff;

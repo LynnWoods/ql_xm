@@ -2,7 +2,8 @@
     <view class="orderDetailContent" v-if="order_info_list">
         <view class="headBox">
             <view class="earnings">{{$t('content.userList[17]')}} (FIL)</view>
-            <view class="percentum">{{order_info_list.money * order_info_list.profit}}</view>
+<!--            <view class="percentum">{{order_info_list.money * order_info_list.profit}}</view>-->
+            <view class="percentum">{{(order_info_list.money * order_info_list.profit / 100).toFixed(8)}}</view>
             <view class="earnings">{{$t('content.userList[18]')}} (FIL)</view>
             <view class="orderNum">{{order_info_list.profitMoney}}</view>
         </view>

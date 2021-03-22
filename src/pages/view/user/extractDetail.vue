@@ -1,7 +1,8 @@
 <template>
     <view class="extractDetail" v-if="withdraw.length!=0">
         <view class="extractDetail_list" v-for="(item,index) in withdraw" :key="index">
-            <image src="@/static/filecoin.png" class="extractImg"></image>
+            <image src="@/static/filecoin.png" class="extractImg" v-if="item.coin !== 'USDT'"></image>
+            <image src="@/static/usdtImg.png" class="extractImg" v-else></image>
             <view class="message">
                 <view>
                     <text class="text" v-if="item.status==1">{{$t('content.user[32]')}}</text>

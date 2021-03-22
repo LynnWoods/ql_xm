@@ -15,7 +15,8 @@
             <view class="assetBody">
                 <view class="assetList" v-for="(item,index) in wallet_list" :key="index">
                     <view class="codeImage">
-                        <!-- <image src="@/static/lf.jpg"></image> -->
+                         <image :src="filImg"v-if="item.coin == 'FIL'"></image>
+                         <image :src="usdtImg"v-else></image>
                         <text>{{item.coin}}</text>
                     </view>
                     <view class="showInfo">
@@ -48,7 +49,9 @@
         data(){
             return{
 				wallet_list:[],
-				cny:null
+				cny:null,
+                filImg:require('@/static/filecoin.png'),
+                usdtImg:require('@/static/usdtImg.png')
 			}
         },
         onShow(){
@@ -67,6 +70,7 @@
 				get_wallet_list({}).then(res=>{
 					this.cny = res.data.cnyTotal;
 					this.wallet_list = res.data.wallet;
+					console.log(this.wallet_list)
 				})
 			},
             returnIndex(){

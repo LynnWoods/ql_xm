@@ -5,7 +5,7 @@
         </view>
         <view class="setIpt">
             <input type="text"v-model="formData.code" :placeholder="$t('content.set[8]')"placeholder-style="color: #c4c4c4">
-            <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime : $t('content.set[9]')}}</text>
+            <text @click="getAuthCodeBefore">{{sendCodeFlag ? intervalTime+'s' : $t('content.set[9]')}}</text>
         </view>
         <view class="setIpt">
             <input type="password" v-if="iptType == 'password'" v-model="formData.pasw" :placeholder="$t('content.set[11]')"placeholder-style="color: #c4c4c4">
@@ -25,7 +25,7 @@
         data(){
             return{
                 iptType:'password',
-                intervalTime:90,
+                intervalTime:60,
                 sendCodeFlag:false,
                 timeId:'',
                 tel:this.$store.state.user.userInfo.mobile,
@@ -40,7 +40,7 @@
         watch:{
             sendCodeFlag(val){
                 if (!val) {
-                    this.intervalTime = 90;
+                    this.intervalTime = 60;
                     return clearInterval(this.timeId);
                 }
                 this.timeId = setInterval(()=>{

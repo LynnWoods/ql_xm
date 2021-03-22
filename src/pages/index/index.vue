@@ -56,6 +56,9 @@
 <!--				</view>-->
 <!--			</view>-->
 <!--		</view>-->
+        <view class="showImg" @click="bannerLink('/pages/view/home/rank_list')">
+            <image src="../../static/rankbanner.png"></image>
+        </view>
 		<view class="newMsg">
 			<view class="infoTit">
 				<text>{{$t('content.home[1]')}}</text>
@@ -69,10 +72,6 @@
 				</view>
 			</view>
 		</view>
-<!--		<view class="notice">-->
-<!--			<view class="query" @click="bannerLink('/pages/view/home/rank_list')">今天你上榜了吗</view>-->
-<!--			<view class="rightBtn"></view>-->
-<!--		</view>-->
 		<view class="notice">
 			<view class="query" @click="bannerLink('/pages/view/home/FIL_now/FIL_now')">{{$t('content.home[3]')}}</view>
 			<view class="rightBtn"></view>

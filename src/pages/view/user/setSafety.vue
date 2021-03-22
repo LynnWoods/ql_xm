@@ -2,7 +2,7 @@
     <view class="setSafetyContent">
         <view class="userList">
             <view class="cu-item" @click="routeSkip('setMobile')">{{$t('content.set[0]')}} <text>{{ $public.phoneEncryption(tel) }}</text></view>
-            <view class="cu-item" @click="routeSkip('setPass')">{{$t('content.set[1]')}} <text>{{$t('content.set[2]')}}</text></view>
+            <view class="cu-item" style="line-height: 100rpx" @click="routeSkip('setPass')">{{$t('content.set[1]')}} <text>{{$t('content.set[2]')}}</text></view>
             <view class="cu-item" @click="routeSkip('setDeal')">{{$t('content.set[3]')}}
 			<text v-if="status">{{$t('content.set[4]')}}</text>
 			<text v-else>{{$t('content.set[5]')}}</text>

@@ -40,7 +40,7 @@
 			<view class="bottom" v-if="item.downTime < 0&&item.isSell=='ACTIVE'">
 			    <text class="gray">{{$t('content.bazaar[2]')}}</text>
 			</view>
-			<view class="bottom" v-if="item.isSell!='ACTIVE'"></view>
+<!--			<view class="bottom" v-if="item.isSell!='ACTIVE'"></view>-->
         </view>
     </view>
 </template>

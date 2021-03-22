@@ -6,7 +6,7 @@ Public.img_host = 'http://wjykcs.wisvalley.cn';
 
 // #ifndef APP-PLUS
 Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://wjykcs.wisvalley.cn';
-// Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://api.wjyk.website';
+// Public.img_host = process.env.NODE_ENV === "development"? "/api" :'http://wjykcs.wisvalley.cn';
 // #endif
 
 //传一个手机号 返回手机号的前3位和后四位 其他的显示* (手机号加密)
@@ -126,6 +126,22 @@ Public.keepFull = function(num){
 		s_x += '0';
 	 }
 	 return s_x;
+}
+//保留2位小数，不够位数，则用0替补
+Public.keepFulls = function(num){
+    // Math.floor(num*100 * 100) / 100
+    let result = Math.round(num*1000 * 1000) / 1000;
+    let s_x = result.toString();
+    let pos_decimal = s_x.indexOf('.');
+    if (pos_decimal < 0) {
+        pos_decimal = s_x.length;
+
+        s_x += '.';
+    }
+    while (s_x.length <= pos_decimal + 2) {
+        s_x += '0';
+    }
+    return s_x;
 }
 //倒计时封装
 Public.countDown = function(time){

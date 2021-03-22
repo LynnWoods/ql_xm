@@ -1,7 +1,8 @@
 <template>
     <view class="topupDetail" v-if="deposit.length!=0">
         <view class="topupDetail_list" v-for="(item,index) in deposit" :key="index">
-            <image src="@/static/filecoin.png" class="topupImg"></image>
+            <image src="@/static/filecoin.png" class="topupImg" v-if="item.unit !== 'USDT'"></image>
+            <image src="@/static/usdtImg.png" class="topupImg" v-else></image>
             <view class="message">
                 <view>
                     <text class="text">{{$t('content.user[16]')}}</text>

@@ -3,9 +3,9 @@ import request from '@/utils/request.js'
 export let baseUrl = 'http://wjykcs.wisvalley.cn';
 // #endif
 // #ifndef APP-PLUS
-// export let baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://qlky.wisvalley.cn';
-//
 export let baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://wjykcs.wisvalley.cn';
+//
+// export let baseUrl = process.env.NODE_ENV === "development"? "/api" :'http://192.168.0.114:8081';
 // #endif
 export function submitLogin(params){//登录
     return request.globalPost(
@@ -194,10 +194,28 @@ export function getPorderInfo(params){//订单详情
 }
 
 
-
-
-
 export function cms_version(params){//查看版本
     return request.globalGet(
         '/app/cms/version',params)
 }
+
+export function getRankHank(params){//获取榜单信息算力
+    return request.globalGet(
+        '/app/power/hank',params)
+}
+
+export function getPorderHank(params){//获取榜单信息理财
+    return request.globalGet(
+        '/app/product/hank',params)
+}
+
+
+
+
+
+
+
+
+
+
+
